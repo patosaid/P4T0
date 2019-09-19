@@ -2,13 +2,12 @@
 title: "Clip polygons in R"
 date: 2015-09-01
 author: "Phil Mike Jones para probar"
-categories: ["tutorials"]
+categories: ["blog"]
 tags: ["R", "rstats", "GIS", "sf", "clip", "polygon-clip"]
 ---
 
-jkhdsfkljhslkdjfhaskdjlhnejcslihakjdhkjafkhgdfdskjhkasjh.  
-     safdsafdsafdsafdsafd.  
-  
+Esto va antes de more.  
+
 <!--more--> 
 
 Clipping polygons is a common GIS task.  

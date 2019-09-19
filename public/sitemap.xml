@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>/categories/blog/</loc>
+    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -84,11 +89,6 @@
   
   <url>
     <loc>/tags/sf/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tutorials/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url>
   
