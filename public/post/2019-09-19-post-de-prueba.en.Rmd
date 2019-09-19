@@ -1,0 +1,33 @@
+---
+title: POST DE PRUEBA
+author: Patricio Said
+date: '2019-09-19'
+slug: post-de-prueba
+categories: []
+tags: [test, nada]
+type: ''
+subtitle: 'Este es un subtítulo'
+image: ''
+---
+<!--more-->
+
+# Este es un título H1
+
+Este es una línea de un párrafo
+
+## Este es título H2
+
+Este es un párrago
+
+```{r}
+# este es un comentario en R
+seq1 <- 1:100
+head(seq)
+```
+
+Luego, agregamos ruido
+
+```{r}
+seq2 <- seq1 + rnorm(100, sd = 10)
+```
+
