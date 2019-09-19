@@ -15,7 +15,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 Bla bla bla  
 
-<!--more-->
+<code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code>
 
 # Hola mundo 
 a
