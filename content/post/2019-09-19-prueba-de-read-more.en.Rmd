@@ -7,8 +7,8 @@ tags: ["R", "rstats", "GIS", "sf", "clip", "polygon-clip"]
 ---
 
 jkhdsfkljhslkdjfhaskdjlhnejcslihakjdhkjafkhgdfdskjhkasjh.  
-     
-
+     safdsafdsafdsafdsafd.  
+  
 <!--more--> 
 
 Clipping polygons is a common GIS task.  
