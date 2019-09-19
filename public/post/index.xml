@@ -16,10 +16,10 @@
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>/post/post-de-prueba/</guid>
-      <description>
-
-
-</description>
+      <description>Este es un título H1Este es una línea de un párrafo
+Este es título H2Este es un párrago
+# este es un comentario en Rseq1 &amp;lt;- 1:100head(seq1)## [1] 1 2 3 4 5 6Luego, agregamos ruido
+seq2 &amp;lt;- seq1 + rnorm(100, sd = 10)</description>
     </item>
     
   </channel>

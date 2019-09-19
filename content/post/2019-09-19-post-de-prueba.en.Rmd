@@ -10,7 +10,6 @@ subtitle: 'Este es un subtítulo'
 image: ''
 ---
 
-<!--more-->
 
 # Este es un título H1
 
