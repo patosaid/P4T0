@@ -1,0 +1,22 @@
+---
+title: "Clip polygons in R"
+date: 2015-09-01
+author: "Phil Mike Jones para probar"
+categories: ["tutorials"]
+tags: ["R", "rstats", "GIS", "sf", "clip", "polygon-clip"]
+---
+
+
+
+<p>Clipping polygons is a common GIS task.
+For example, you might want to study local authorities (LADs) in the Yorkshire and the Humber region but can only obtain a shapefile with all the LADs in England.
+Removing all the LADs outside of the Yorkshire and the Humber can be achieved by ‘clipping’ the LADs, using the extent of the larger region as a template.</p>
+<!--more-->
+<p>First, install and load <code>sf</code> for loading the shapefiles, and <code>tidyverse</code> for manipulating the data and plotting the maps.</p>
+<pre class="r"><code># install.packages(&quot;tidyverse&quot;)
+# install.packages(&quot;sf&quot;)
+library(&quot;tidyverse&quot;)
+library(&quot;sf&quot;)</code></pre>
+<p>Then download and unzip our test data (shapefiles of English regions and local authorities):</p>
+<p>…
+***</p>

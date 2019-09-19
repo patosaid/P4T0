@@ -12,10 +12,7 @@ tags: ["hola"]
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-
-Bla bla bla  
-
-<code>&#60;&#33;&#45;&#45;more&#45;&#45;&#62;</code>
+<!--more-->
 
 # Hola mundo 
 a

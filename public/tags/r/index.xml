@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Pato Said</title>
+    <link>/tags/r/</link>
+    <description>Recent content in R on Pato Said</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Sep 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clip polygons in R</title>
+      <link>/post/2019-09-19-prueba-de-read-more/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2019-09-19-prueba-de-read-more/</guid>
+      <description>
+
+
+&lt;p&gt;Clipping polygons is a common GIS task.
+For example, you might want to study local authorities (LADs) in the Yorkshire and the Humber region but can only obtain a shapefile with all the LADs in England.
+Removing all the LADs outside of the Yorkshire and the Humber can be achieved by ‘clipping’ the LADs, using the extent of the larger region as a template.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
