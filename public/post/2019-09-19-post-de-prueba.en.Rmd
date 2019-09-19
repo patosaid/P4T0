@@ -22,7 +22,7 @@ Este es un párrago
 ```{r}
 # este es un comentario en R
 seq1 <- 1:100
-head(seq)
+head(seq1)
 ```
 
 Luego, agregamos ruido
