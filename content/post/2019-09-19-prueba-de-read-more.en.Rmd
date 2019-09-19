@@ -9,7 +9,8 @@ tags: ["R", "rstats", "GIS", "sf", "clip", "polygon-clip"]
 Clipping polygons is a common GIS task.  
 For example, you might want to study local authorities (LADs) in the Yorkshire and the Humber region but can only obtain a shapefile with all the LADs in England.  
 
-<!--more-->
+
+<!--more-->  
 
 Clipping polygons is a common GIS task.  
 For example, you might want to study local authorities (LADs) in the Yorkshire and the Humber region but can only obtain a shapefile with all the LADs in England.  
