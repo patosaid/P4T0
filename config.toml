@@ -33,16 +33,16 @@ pygmentsCodefencesGuessSyntax = true
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 [[Params.bigimg]]
-  src = "img/triangle.jpg"
-  desc = "Triangle"
+  src = "img/paulo.jpg"
+  desc = "por Paulo O. H. (IG: elfotoandinista)"
 [[Params.bigimg]]
-  src = "img/sphere.jpg"
-  desc = "Sphere"
+  src = "img/oscar.jpg"
+  desc = "por Oscar R. Z. (IG: oscar_rzuniga)"
   # position: see values of CSS background-position.
   position = "center top"
 [[Params.bigimg]]
   src = "img/martini.jpg"
-  desc = "Hexagon"
+  desc = "por Fernando G. M. (IG: martini.fotografía)"
 
 [Author]
   name = "Patricio Said"

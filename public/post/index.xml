@@ -11,27 +11,6 @@
     
     
     <item>
-      <title>Hola Mundo!</title>
-      <link>/post/hola-mundo/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/hola-mundo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>POST DE PRUEBA</title>
-      <link>/post/post-de-prueba/</link>
-      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/post/post-de-prueba/</guid>
-      <description>Este es un título H1Este es una línea de un párrafo
-Este es título H2Este es un párrago
-# este es un comentario en Rseq1 &amp;lt;- 1:100head(seq1)## [1] 1 2 3 4 5 6Luego, agregamos ruido
-seq2 &amp;lt;- seq1 + rnorm(100, sd = 10)</description>
-    </item>
-    
-    <item>
       <title>¡Hola, Mundo!</title>
       <link>/post/hola-mundo/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
@@ -40,18 +19,6 @@ seq2 &amp;lt;- seq1 + rnorm(100, sd = 10)</description>
       <description>Hola, es un agrado que estes aquí! Adelante, pasa ☺.
 TL;DR: Abro blog relacionado a la ciencia de datos en R.
 ¡Por fin!, finalmente abrí mi blog personal. Tengo la intención de usar esta web para subir contenido relacionado con la ciencia de datos en R. Ya llevo casi 3 años programando en R, aunque debo decir que en mis inicios desaprovechaba el gran potencial de las herramiantas desarrolladas en el entorno de R.</description>
-    </item>
-    
-    <item>
-      <title>Clip polygons in R</title>
-      <link>/post/2019-09-19-prueba-de-read-more/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-09-19-prueba-de-read-more/</guid>
-      <description>Clipping polygons is a common GIS task.
-For example, you might want to study local authorities (LADs) in the Yorkshire and the Humber region but can only obtain a shapefile with all the LADs in England.
-Removing all the LADs outside of the Yorkshire and the Humber can be achieved by ‘clipping’ the LADs, using the extent of the larger region as a template.
-First, install and load sf for loading the shapefiles, and tidyverse for manipulating the data and plotting the maps.</description>
     </item>
     
   </channel>

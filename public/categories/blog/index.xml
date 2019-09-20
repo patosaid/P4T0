@@ -21,17 +21,5 @@
 ¡Por fin!, finalmente abrí mi blog personal. Tengo la intención de usar esta web para subir contenido relacionado con la ciencia de datos en R. Ya llevo casi 3 años programando en R, aunque debo decir que en mis inicios desaprovechaba el gran potencial de las herramiantas desarrolladas en el entorno de R.</description>
     </item>
     
-    <item>
-      <title>Clip polygons in R</title>
-      <link>/post/2019-09-19-prueba-de-read-more/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2019-09-19-prueba-de-read-more/</guid>
-      <description>Clipping polygons is a common GIS task.
-For example, you might want to study local authorities (LADs) in the Yorkshire and the Humber region but can only obtain a shapefile with all the LADs in England.
-Removing all the LADs outside of the Yorkshire and the Humber can be achieved by ‘clipping’ the LADs, using the extent of the larger region as a template.
-First, install and load sf for loading the shapefiles, and tidyverse for manipulating the data and plotting the maps.</description>
-    </item>
-    
   </channel>
 </rss>
