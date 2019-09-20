@@ -1,33 +1,31 @@
 ---
-title: Hola mundo!
+title: "¡Hola, Mundo!"
+subtitle: "Mi primer post"
 author: Patricio Said
 date: '2019-09-19'
 slug: hola-mundo
-tags: ["hola"]
+categories: ["blog"]
+tags: ["helloworld"]
+#image: "img/martini.jpg"
+description: "HOLAMUNDO"
 ---
 
+Hola, es un agrado que estes aquí! Adelante, pasa &#x263A;.   
+
+> **TL;DR:** Abro blog relacionado a la ciencia de datos en R.   
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+¡Por fin!, finalmente abrí mi blog personal. Tengo la intención de usar esta web para subir contenido relacionado con la ciencia de datos en R. Ya llevo casi 3 años programando en R, aunque debo decir que en mis inicios desaprovechaba el gran potencial de las herramiantas desarrolladas en el entorno de R. Por ejemplo, al comienzo desconocía totalmente RStudio y trabaja usando únicamente RConsole!, pero bueno, en ese tiempo solo quería hacer un par pruebas de hipótesis o unas simples gráficas. ¿Y después?, metes manos para cambiar las estéticas de tus gráficas, aprendes a usar `ggplot2`, o quieres automatizar tu código para que genere reportes, conoces `RMarkdown`, más el conjunto de `tidyverse` y ya puedes crear aplicaciónes web o dashboards con `shiny`. Como una bola de nieve vas conociendo el aporte que han hecho cientos de personas de la gran comunidad de R. Y aquí estoy yo, porque conocí a `blogdown`.  
+
+Debo decir que abrir y publicar este blog ha sido super fácil, de hecho no he tenido que escribir ningúna linea de código (ni de R, HTML o CSS, nada). Solamente usando RStudio y el paquete `blogdown` que se basa en [Hugo](https://gohugo.io/) para la generación de sitios web. Gracias a los autores de `blogdown`, [Yihui Xie](https://yihui.name), [Amber Thomas](https://amber.rbind.io) y [Alison](https://alison.rbind.io), y gracias a [Dean Attali](https://deanattali.com/) y [Michael Romero](http://halogenica.net/) por el tema del blog.    
+
+Un trozo de código a modo de prueba... 
+
+```{r}
+print("hola mundo")
 ```
 
-<!--more-->
 
-# Hola mundo 
-a
-a
-a
-a
-a
-a
-a
- 
- a
- asd
- asf
- vv
- 
- ddd
- 
+
+
  
