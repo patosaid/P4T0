@@ -10,7 +10,7 @@ tags: ["helloworld"]
 description: "HOLAMUNDO"
 ---
 
-Hola, es un agrado que estes aquí! Adelante, pasa &#x263A;.   
+Hola, es un agrado que estes aquí! Adelante, pasa :smile: .  
 
 > **TL;DR:** Abro blog relacionado a la ciencia de datos en R.   
 
