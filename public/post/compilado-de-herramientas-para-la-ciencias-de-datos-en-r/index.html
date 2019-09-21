@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Compilado de herramientas para la ciencia de datos en R - Pato Said</title>
+  <meta property="og:title" content="Compilado de herramientas para la ciencia de datos en R" />
+  <meta name="twitter:title" content="Compilado de herramientas para la ciencia de datos en R" />
+  <meta name="description" content="tools">
+  <meta property="og:description" content="tools">
+  <meta name="twitter:description" content="tools">
+  <meta name="author" content="Patricio Said"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Pato Said",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/post\/compilado-de-herramientas-para-la-ciencias-de-datos-en-r\/",
+          "name": "Compilado de herramientas para la ciencia de datos en r"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Patricio Said"
+  },
+  "headline": "Compilado de herramientas para la ciencia de datos en R",
+  "description" : "tools",
+  "inLanguage" : "en",
+  "wordCount":  705 ,
+  "datePublished" : "2019-09-20T00:00:00",
+  "dateModified" : "2019-09-20T00:00:00",
+  "image" : "\/img\/pink.png",
+  "keywords" : [ "paquetes, libros, compilado, recursos" ],
+  "mainEntityOfPage" : "\/post\/compilado-de-herramientas-para-la-ciencias-de-datos-en-r\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/pink.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Compilado de herramientas para la ciencia de datos en R" />
+<meta property="og:description" content="tools">
+<meta property="og:image" content="/img/pink.png" />
+<meta property="og:url" content="/post/compilado-de-herramientas-para-la-ciencias-de-datos-en-r/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Pato Said" />
+
+  <meta name="twitter:title" content="Compilado de herramientas para la ciencia de datos en R" />
+  <meta name="twitter:description" content="tools">
+  <meta name="twitter:image" content="/img/pink.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Patosaid_cl" />
+  <meta name="twitter:creator" content="@Patosaid_cl" />
+  <link href='/img/favicon.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/pink.png" />
+  <meta name="twitter:image" content="/img/pink.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Patosaid_cl" />
+  <meta name="twitter:creator" content="@Patosaid_cl" />
+  <meta property="og:url" content="/post/compilado-de-herramientas-para-la-ciencias-de-datos-en-r/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pato Said" />
+
+  <meta name="generator" content="Hugo 0.58.2" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Pato Said"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="/css/highlight.min.css" /><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Pato Said</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Pato Said" href="/">
+            <img class="avatar-img" src="/img/pink.png" alt="Pato Said" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Compilado de herramientas para la ciencia de datos en R</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 20, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;705&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Patricio Said
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<p>Este post tiene el objetivo de guardar y mostrar ordenadamente las fuentes de recursos que todo principiante en el mundo de R debiese conocer. Obviamente no nombraré todos los paquetes o libros que existen en torno a R, pero si los lugares donde dar los primeros pasos.</p>
+<p>Este compilado está inspirado en <a href="https://awesome-r.com/" class="uri">https://awesome-r.com/</a> (revísalo).</p>
+<div id="instalar-r" class="section level2">
+<h2>Instalar R</h2>
+<p><em>(No está de más decir que se debe instalar R desde páginas oficiales)</em></p>
+<ul>
+<li>R (base): <a href="https://cran.rstudio.com/" class="uri">https://cran.rstudio.com/</a><br />
+</li>
+<li>RStudio: <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
+</ul>
+</div>
+<div id="paquetes-package" class="section level2">
+<h2>Paquetes 📦</h2>
+<ul>
+<li>Luego de la instalación de R, <a href="https://github.com/yihui/knitr">knitr</a> y <a href="https://rmarkdown.rstudio.com/">rmarkdown</a> te ayudan a la generenación de documentos dinámicos.<br />
+</li>
+<li><a href="https://www.tidyverse.org/">tidyverse</a>, contenedor de varios paquetes, estos son algunos:
+<ul>
+<li><a href="https://readr.tidyverse.org/">readr</a>, para importar datos tabulados a R.<br />
+</li>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a>, manipulación de datos.<br />
+</li>
+<li><a href="https://tidyr.tidyverse.org/">tidyr</a>, cambiar la forma de los datos.<br />
+</li>
+<li><a href="https://stringr.tidyverse.org/">stringr</a>, trabajar con carácteres.<br />
+</li>
+<li><a href="https://lubridate.tidyverse.org/">lubridate</a>, trabajar con fechas.<br />
+</li>
+<li><a href="https://magrittr.tidyverse.org/">magrittr</a>, uso de la pipa (<code>%&gt;%</code>).<br />
+</li>
+<li><a href="https://ggplot2.tidyverse.org/">ggplot2</a>, para creación de gráficas.<br />
+</li>
+</ul></li>
+<li><a href="https://github.com/Rdatatable/data.table">data.table</a>, manipulación rápida de gran cantidad de datos.<br />
+</li>
+<li>Para la creación de <strong>gráficas interactivas</strong>:
+<ul>
+<li><a href="http://jkunst.com/highcharter/">highcharter</a>, gráficos basados en <a href="https://www.highcharts.com/">Highcharts</a>.<br />
+</li>
+<li><a href="https://github.com/rstudio/dygraphs">dygraphs</a>, para series de tiempo.<br />
+</li>
+<li><a href="https://github.com/ropensci/plotly">plotly</a>, gráficas interactivas con <a href="https://plot.ly/">plotly</a>.<br />
+</li>
+<li><a href="http://rstudio.github.io/leaflet/">leaflet</a>, mapas interactivos.<br />
+</li>
+<li><a href="http://www.htmlwidgets.org/">htmlwidgets</a>, javascript para visualizar datos en R. <em>(revisa los casos de usos, son inspiradores)</em>.<br />
+</li>
+</ul></li>
+<li><a href="https://github.com/rstudio/shiny">shiny</a>, para creación de aplicaciones web. <em>(Ver <a href="https://grabear.github.io/awesome-rshiny/">awesome-rshiny</a> para más recursos en shiny)</em>.<br />
+</li>
+<li><a href="https://cran.r-project.org/web/packages/kableExtra/index.html">kableExtra</a>, mostrar tablas en formato latex y HTML.</li>
+</ul>
+<p>Los paquetes nombrados son los más básicos y con ellos se pueden hacer muchas cosas. Revisa <a href="https://awesome-r.com/">Awesome-R</a>, hay paquetes para todo… conectarse a bases de datos, API’s para extraer datos de páginas webs, optimización de problemas no lineales, análisis de datos espaciales, machine learning etc.</p>
+</div>
+<div id="libros-books" class="section level2">
+<h2>Libros 📚</h2>
+<ul>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a> (empeza por este!, lo están traduciendo al español: <a href="https://es.r4ds.hadley.nz/" class="uri">https://es.r4ds.hadley.nz/</a>)</li>
+<li><a href="https://cran.r-project.org/doc/manuals/R-intro.pdf">An Introduction to R</a><br />
+</li>
+<li>Colección de libros gratis en: <a href="https://cran.r-project.org/other-docs.html" class="uri">https://cran.r-project.org/other-docs.html</a><br />
+</li>
+<li><a href="https://rc2e.com/">R Cookbook</a></li>
+<li><a href="http://adv-r.had.co.nz/">Advanced R</a><br />
+</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a><br />
+</li>
+<li><a href="https://uc-r.github.io/">UC Business Analytics R Programming Guide</a><br />
+</li>
+<li><a href="https://cengel.github.io/R-data-wrangling/">Data Wrangling with R</a></li>
+<li><a href="https://thinkr-open.github.io/building-shiny-apps-workflow/">Building Big Shiny Apps - A Workflow</a></li>
+</ul>
+<div id="otros-libros-de-interes" class="section level3">
+<h3>Otros libros de interés:</h3>
+<ul>
+<li><a href="https://bookdown.org/jeffreytmonroe/business_analytics_with_r7/">Business Analytics with R</a></li>
+<li><a href="https://www.crcpress.com/Practical-R-for-Mass-Communication-and-Journalism/Machlis/p/book/9781138726918">Practical R for Mass Communication and Journalism</a><br />
+</li>
+<li><a href="https://www.h2o.ai/wp-content/uploads/2018/01/RBooklet.pdf">Machine Learning with R and H2O</a><br />
+</li>
+<li><a href="https://serialmentor.com/dataviz/">Fundamentals of Data Visualization</a><br />
+</li>
+<li><a href="https://www.rmetrics.org/downloads/9783906041025-basicr.pdf">Basic R for Finance</a><br />
+</li>
+<li><a href="https://www.datanalytics.com/libro_r/index.html">R para profesionales de los datos: una introducción</a><br />
+</li>
+<li><a href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/">Ciencia de Datos para Gente Sociable</a> <em>R en ciencias sociales</em><br />
+</li>
+<li><a href="https://moderndive.com/">Statistical Inference via Data Science</a></li>
+</ul>
+</div>
+</div>
+<div id="cheat-sheets-bookmark_tabs" class="section level2">
+<h2>Cheat Sheets 📑</h2>
+<p><em>(Las chuletas o torpedos, resúmenes con las funciones más importantes de algunos paquetes, ver <a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a>)</em></p>
+<ul>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf">RStudio IDE</a><br />
+</li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf">Base R</a><br />
+</li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">RMarkdown</a><br />
+</li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data Wrangling</a><br />
+</li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">Data Visualization con ggplot2</a><br />
+</li>
+<li><a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Interactive Web Apps with shiny</a><br />
+</li>
+<li><a href="http://www.evolution.unibas.ch/teaching/evol_genetics/A_Bioinformatics/Reading/data-import-cheatsheet.pdf">Data import</a><br />
+</li>
+<li><a href="https://resources.rstudio.com/spanish-pdfs/sparklyrspanish">Ciencia de datos en R con sparklyr</a></li>
+</ul>
+</div>
+<div id="la-comunidad-de-r-globe_with_meridians" class="section level1">
+<h1>La comunidad de R 🌐</h1>
+<p>Este punto no es una herramienta pero es importante mencionarla. Como sabemos, R es un lenguaje de programación con un enfoque al análisis estadístico y los paquetes que usamos estan desarrollados por diferentes usuarios de R que comparten sus aportes. Justamente este es un aspecto fuerte de R, su gran comunidad, por eso es importante conocerla, participar y estar al tanto de todas las novedades. Aquí te dejo algunos enlaces:</p>
+<ul>
+<li><a href="https://www.r-bloggers.com/">R-bloggers</a>, sitio donde diferentes usuarios bloguean sobre R.<br />
+</li>
+<li><a href="https://rweekly.org/">RWeekly</a>, novedades en R.<br />
+</li>
+<li><a href="https://www.statmethods.net/">Quick-R</a>, sitio con diferentes materias en R.<br />
+</li>
+<li><a href="https://www.r-users.com/">R-users</a>, Foro de discusión.<br />
+</li>
+<li><a href="https://community.rstudio.com/">RStudio Community</a>, importante foro de discuisión.</li>
+</ul>
+<div id="r-en-twitter" class="section level2">
+<h2>R en Twitter</h2>
+<p>También, si quieres estar al tanto de las novedades en R te aconsejo seguir a las siguientes cuentas (personalmente no uso RRSS, pero en twitter he encontrado información muy valiosa de la comunidad de R):</p>
+<ul>
+<li><a href="https://twitter.com/R4DScommunity">R4DScommunity</a> o R for Data Science.</li>
+<li><a href="https://twitter.com/tidypod">tidypod</a> Podcast sobre visualización.<br />
+</li>
+<li><a href="https://twitter.com/R4DS_es">R4DS_es</a>, R más accesible en Latinoamérica, impulsan <a href="https://twitter.com/search?q=%23DatosDeMi%C3%A9rcoles&amp;src=hashtag_click">#DatosDeMiercoles</a><br />
+</li>
+<li><a href="https://twitter.com/latinr_conf">LatinR</a>, la comunidad Latina en R.<br />
+</li>
+<li><a href="https://twitter.com/RLadiesGlobal">RLadiesGlobal</a>.</li>
+</ul>
+<p>De igual forma te recomiendo seguir a los autores de los libros y paquetes que nombré arriba, como por ejemplo a <a href="https://twitter.com/hadleywickham">Hadley Wickham</a> autor del libro R for Data Science y desarrollador de la librería <code>tidyverse</code>, o <a href="https://twitter.com/rivaquiroga">Riva Quiroga</a> exponente de la comunidad R en latinoamérica.</p>
+<p>Te recomiendo participar en <a href="https://github.com/cienciadedatos/datos-de-miercoles">Datos de miércoles</a>, la versión en español de <a href="https://github.com/rfordatascience/tidytuesday">#tidytuesday</a>, donde cada semana suben datos para que diferentes usuarios puedan compartir sus visualizaciones. He visto aportes increíbles!, es una buena oportunidad para compartir y conocer el trabajo de otros usuarios de R.</p>
+</div>
+<div id="este-post-se-debe-actualizar" class="section level2">
+<h2>Este post se debe actualizar…</h2>
+<p>Aún tengo un montón de páginas en favoritos y tweets guardados por revisar para compartir en este post. Aquí dejo algunos blogs que suelo visitar:</p>
+<ul>
+<li><a href="https://dreamrs.github.io/esquisse/articles/get-started.html" class="uri">https://dreamrs.github.io/esquisse/articles/get-started.html</a><br />
+</li>
+<li><a href="https://smach.github.io/R4JournalismBook/HowDoI.html" class="uri">https://smach.github.io/R4JournalismBook/HowDoI.html</a><br />
+</li>
+<li><a href="https://www.dreamrs.fr/" class="uri">https://www.dreamrs.fr/</a></li>
+<li><a href="https://cedricscherer.netlify.com/" class="uri">https://cedricscherer.netlify.com/</a></li>
+<li><a href="https://yintingchou.com/" class="uri">https://yintingchou.com/</a><br />
+</li>
+<li><a href="https://deanattali.com/blog/building-shiny-apps-tutorial/" class="uri">https://deanattali.com/blog/building-shiny-apps-tutorial/</a><br />
+</li>
+<li><a href="https://blog.rstudio.com/2018/02/06/tensorflow-for-r/" class="uri">https://blog.rstudio.com/2018/02/06/tensorflow-for-r/</a><br />
+</li>
+<li><a href="https://www.brodrigues.co/" class="uri">https://www.brodrigues.co/</a></li>
+<li><a href="http://www.nathancunn.com/" class="uri">http://www.nathancunn.com/</a></li>
+<li><a href="https://bitsandbricks.github.io/" class="uri">https://bitsandbricks.github.io/</a><br />
+</li>
+<li><a href="http://www.thertrader.com/" class="uri">http://www.thertrader.com/</a></li>
+</ul>
+<hr />
+<div id="si-tienes-sugerencias-o-comentarios-me-puedes-escribir-a-psaidp2gmail.com" class="section level4">
+<h4>Si tienes sugerencias o comentarios me puedes escribir a <a href="mailto:psaidp2@gmail.com" class="email">psaidp2@gmail.com</a></h4>
+</div>
+</div>
+</div>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="//tags/paquetes/">paquetes</a>&nbsp;
+            
+              <a href="//tags/libros/">libros</a>&nbsp;
+            
+              <a href="//tags/compilado/">compilado</a>&nbsp;
+            
+              <a href="//tags/recursos/">recursos</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=%2fpost%2fcompilado-de-herramientas-para-la-ciencias-de-datos-en-r%2f&amp;text=Compilado%20de%20herramientas%20para%20la%20ciencia%20de%20datos%20en%20R&amp;via=Patosaid_cl" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2fcompilado-de-herramientas-para-la-ciencias-de-datos-en-r%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=%2fpost%2fcompilado-de-herramientas-para-la-ciencias-de-datos-en-r%2f&amp;title=Compilado%20de%20herramientas%20para%20la%20ciencia%20de%20datos%20en%20R" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=%2fpost%2fcompilado-de-herramientas-para-la-ciencias-de-datos-en-r%2f&amp;title=Compilado%20de%20herramientas%20para%20la%20ciencia%20de%20datos%20en%20R" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=%2fpost%2fcompilado-de-herramientas-para-la-ciencias-de-datos-en-r%2f&amp;title=Compilado%20de%20herramientas%20para%20la%20ciencia%20de%20datos%20en%20R" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2fcompilado-de-herramientas-para-la-ciencias-de-datos-en-r%2f&amp;description=Compilado%20de%20herramientas%20para%20la%20ciencia%20de%20datos%20en%20R" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/post/hola-mundo/" data-toggle="tooltip" data-placement="top" title="¡Hola, Mundo!">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/patosaid" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/Patosaid_cl" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/patosaid.cl" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Patricio Said
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="/">Pato Said</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.58.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
