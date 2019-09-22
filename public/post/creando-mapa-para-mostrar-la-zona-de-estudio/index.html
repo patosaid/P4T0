@@ -65,7 +65,7 @@ Primero cargamos las librerias, readr para importar los datos y ggplot2 para gra
   "headline": "Creando mapa para mostrar el área de estudio",
   "description" : "Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).\nPrimero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.",
   "inLanguage" : "en",
-  "wordCount":  678 ,
+  "wordCount":  679 ,
   "datePublished" : "2019-09-21T00:00:00",
   "dateModified" : "2019-09-21T00:00:00",
   "image" : "\/img\/pink.png",
@@ -258,7 +258,7 @@ Primero cargamos las librerias, readr para importar los datos y ggplot2 para gra
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;678&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;679&nbsp;words
   
   
     
@@ -359,7 +359,7 @@ ggplot(data = cl) +
 <p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Guardamos la gráfica con <code>ggsave()</code>:</p>
 <pre class="r"><code>ggsave(&quot;mapa.png&quot;, width = 6, height = 8, dpi = &quot;screen&quot;)</code></pre>
-<p>También puedes mostrar área de estudio de manera interactiva y simple mediante <strong>Leaftle</strong>:</p>
+<p>También puedes mostrar el área de estudio de manera interactiva y simple mediante <strong>Leaftle</strong>:</p>
 <pre class="r"><code>library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% 
   setView(-77.344, -34.597, zoom = 5) %&gt;% 

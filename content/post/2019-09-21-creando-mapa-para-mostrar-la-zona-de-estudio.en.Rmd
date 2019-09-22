@@ -100,7 +100,7 @@ ggsave("mapa.png", width = 6, height = 8, dpi = "screen")
 
 
 
-También puedes mostrar área de estudio de manera interactiva y simple mediante **Leaftle**:  
+También puedes mostrar el área de estudio de manera interactiva y simple mediante **Leaftle**:  
 
 
 ```{r eval = FALSE}

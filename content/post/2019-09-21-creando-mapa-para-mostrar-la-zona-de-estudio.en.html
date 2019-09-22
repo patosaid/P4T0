@@ -85,7 +85,7 @@ ggplot(data = cl) +
 <p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Guardamos la gráfica con <code>ggsave()</code>:</p>
 <pre class="r"><code>ggsave(&quot;mapa.png&quot;, width = 6, height = 8, dpi = &quot;screen&quot;)</code></pre>
-<p>También puedes mostrar área de estudio de manera interactiva y simple mediante <strong>Leaftle</strong>:</p>
+<p>También puedes mostrar el área de estudio de manera interactiva y simple mediante <strong>Leaftle</strong>:</p>
 <pre class="r"><code>library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% 
   setView(-77.344, -34.597, zoom = 5) %&gt;% 
