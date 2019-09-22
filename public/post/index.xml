@@ -19,8 +19,7 @@
       <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/post/creando-mapa-para-mostrar-la-zona-de-estudio/</guid>
       <description>Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).
-Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.
-library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de detalle (por ejemplo los límite de los estados/regiones o nombres de ciudades) requerirás de determinadas fuentes de datos.</description>
+Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.</description>
     </item>
     
     <item>

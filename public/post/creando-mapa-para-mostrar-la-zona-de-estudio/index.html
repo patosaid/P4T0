@@ -11,11 +11,9 @@
   <meta property="og:title" content="Creando mapa para mostrar el área de estudio" />
   <meta name="twitter:title" content="Creando mapa para mostrar el área de estudio" />
   <meta name="description" content="Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).
-Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.
-library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de detalle (por ejemplo los límite de los estados/regiones o nombres de ciudades) requerirás de determinadas fuentes de datos.">
+Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.">
   <meta property="og:description" content="Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).
-Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.
-library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de detalle (por ejemplo los límite de los estados/regiones o nombres de ciudades) requerirás de determinadas fuentes de datos.">
+Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.">
   <meta name="twitter:description" content="Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo …">
   <meta name="author" content="Patricio Said"/><script type="application/ld+json">
 {
@@ -65,9 +63,9 @@ library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de 
     "name" : "Patricio Said"
   },
   "headline": "Creando mapa para mostrar el área de estudio",
-  "description" : "Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).\nPrimero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.\nlibrary(readr)\rlibrary(ggplot2)\rSegún la zona que deseas mostrar y el nivel de detalle (por ejemplo los límite de los estados\/regiones o nombres de ciudades) requerirás de determinadas fuentes de datos.",
+  "description" : "Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).\nPrimero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.",
   "inLanguage" : "en",
-  "wordCount":  332 ,
+  "wordCount":  678 ,
   "datePublished" : "2019-09-21T00:00:00",
   "dateModified" : "2019-09-21T00:00:00",
   "image" : "\/img\/pink.png",
@@ -88,8 +86,7 @@ library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de 
 
 <meta property="og:title" content="Creando mapa para mostrar el área de estudio" />
 <meta property="og:description" content="Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).
-Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.
-library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de detalle (por ejemplo los límite de los estados/regiones o nombres de ciudades) requerirás de determinadas fuentes de datos.">
+Primero cargamos las librerias, readr para importar los datos y ggplot2 para graficar.">
 <meta property="og:image" content="/img/pink.png" />
 <meta property="og:url" content="/post/creando-mapa-para-mostrar-la-zona-de-estudio/" />
 <meta property="og:type" content="website" />
@@ -258,10 +255,10 @@ library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de 
   <i class="fas fa-calendar"></i>&nbsp;Posted on September 21, 2019
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;332&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;678&nbsp;words
   
   
     
@@ -287,6 +284,17 @@ library(readr)library(ggplot2)Según la zona que deseas mostrar y el nivel de 
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers/leaflet-providers.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
 
 
 <p>Es común mostrar dentro de la metodología de un trabajo el área geográfica de donde se realizó el estudio. Si no estas familiarizado con datos espaciales, aquí te muestro una alternativa de cómo mostrar la zona de estudio (en lugar de ir a GoogleMaps y sacar una screenshot).</p>
@@ -303,13 +311,65 @@ ggplot(data = cl) +
   geom_sf()</code></pre>
 <p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/grafica1-1.png" width="672" /></p>
 <p>Ya tenemos el mapa completo de Chile y con sus regiones delimitadas. Para este ejemplo voy a determinar la zona de estudio desde la Región del Maule hasta la Región de los Ríos, pero tambíen quiero mostrar los alrededores para que el lector pueda ubicarse. Para esto voy a cambiar los límites de la gráfica, de manera de hacer un “zoom” en el mapa. Los límites de la gráfica se pueden modificar filtrando el conjunto de datos según las regiones que queremos mostrar o modificar los parámetros <code>xlim</code> y <code>ylim</code> con un par de coordenadas. Esta última alternativa es más artesanal pero también una solución simple si no tienes experiencia con objetos <code>sf</code>.</p>
-<p>El par de coordenadas las puedes obtener desde OpenStreetMap o GoogleMaps.<br />
+<p>El par de coordenadas las puedes obtener desde OpenStreetMap o GoogleMaps.</p>
+<div class="figure">
 <img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/punto1.PNG" alt="Coordenada=(-27,-80)" style="width:80.0%" />
-El límite superior lo determiné en la coordenada (-27,-80) y el inferior en (-42,-67). En <code>ggplot()</code> queda de la siguiente forma:</p>
+<p class="caption">Coordenada=(-27,-80)</p>
+</div>
+<p>El límite superior lo determiné en la coordenada (-27,-80) y el inferior en (-42,-67). En <code>ggplot()</code> queda de la siguiente forma:</p>
 <pre class="r"><code>ggplot(data = cl) +
   geom_sf(fill =&quot;white&quot;)+
   coord_sf(xlim = c(-67, -80), ylim = c(-42, -27))</code></pre>
 <p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/grafica2-1.png" width="672" /></p>
+<p>Con <code>geom_rect()</code> dibujo un rectángulo:</p>
+<pre class="r"><code>ggplot(data = cl) +
+  geom_sf(fill =&quot;white&quot;)+
+  coord_sf(xlim = c(-67, -80), ylim = c(-42, -27))+
+  geom_rect(xmin = -74.8, xmax = -70, ymin = -40.65, ymax = -34.7, 
+            fill = NA, colour = &quot;black&quot;, size = 1)</code></pre>
+<p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/grafica3-1.png" width="672" /></p>
+<p>Para finalizar, con la librería <code>ggspatial</code> y su función <code>annotation_north_arrow()</code> se puede incluir una flecha. Y de manera rústica agrego manualmente algunos nombres de ciudades de referencia por medio de la función <code>annotate()</code>.</p>
+<pre class="r"><code>library(ggspatial)
+ggplot(data = cl) +
+  geom_sf(fill = &quot;white&quot;) +
+  annotation_scale(location = &quot;bl&quot;, width_hint = 0.7) +  # añadir barra de escala
+  annotation_north_arrow(location = &quot;bl&quot;, which_north = &quot;true&quot;,  # añadir flecha
+                         pad_x = unit(0, &quot;in&quot;), pad_y = unit(0.3, &quot;in&quot;),
+                         style = north_arrow_fancy_orienteering) +
+  coord_sf(xlim = c(-67, -80), ylim = c(-42, -28))+  #limite del mapa 
+  geom_rect(xmin = -74.8, xmax = -70, ymin = -40.65, ymax = -34.7,  # añado un rectángulo de bordes negros
+            fill = NA, colour = &quot;black&quot;, size = 1)+
+  annotate(geom = &quot;text&quot;, label = &quot;O c é a n o   P a c í f i c o&quot;,  # agrego texto para indicar zonas
+           x = -79, y = -34, fontface = &quot;italic&quot;,
+           color = &quot;grey22&quot;, size = 4, angle = 90)+
+  annotate(geom = &quot;text&quot;, label = &quot;Coquimbo&quot;,   # agrego ciudades
+           x = -71.34, y = -29.9,
+           color = &quot;grey22&quot;, size = 3)+
+  annotate(geom = &quot;text&quot;, label = &quot;Santiago&quot;,  
+           x = -69.60, y = -33.43,
+           color = &quot;grey22&quot;, size = 3)+
+  annotate(geom = &quot;text&quot;, label = &quot;Los Ángeles&quot;, 
+           x = -71.24, y = -37.46,
+           color = &quot;grey22&quot;, size = 3)+
+  annotate(geom = &quot;text&quot;, label = &quot;Zona de estudio&quot;,  
+           x = -75.4, y = -37.675, fontface = c(&quot;bold&quot;), angle = 90,
+           color = &quot;grey22&quot;, size = 3)+
+  xlab(&quot;Longitud&quot;) + ylab(&quot;Latitud&quot;)+ # título  de los ejes
+  theme_bw()</code></pre>
+<p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Guardamos la gráfica con <code>ggsave()</code>:</p>
+<pre class="r"><code>ggsave(&quot;mapa.png&quot;, width = 6, height = 8, dpi = &quot;screen&quot;)</code></pre>
+<p>También puedes mostrar área de estudio de manera interactiva y simple mediante <strong>Leaftle</strong>:</p>
+<pre class="r"><code>library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% 
+  setView(-77.344, -34.597, zoom = 5) %&gt;% 
+    addRectangles(
+    lng1= -74.575, lat1=-34.886,  
+    lng2= -70.192, lat2=-40.830, 
+    fillColor = &quot;transparent&quot;) %&gt;% 
+  addProviderTiles(providers$Stamen.Toner)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addRectangles","args":[-34.886,-74.575,-40.83,-70.192,null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"transparent","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["Stamen.Toner",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}],"setView":[[-34.597,-77.344],5,[]],"limits":{"lat":[-40.83,-34.886],"lng":[-74.575,-70.192]}},"evals":[],"jsHooks":[]}</script>
 
 
         
