@@ -5,6 +5,8 @@
     <link>/tags/paquetes/</link>
     <description>Recent content in paquetes on Pato Said</description>
     <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
+    <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
     <lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/paquetes/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Compilado de herramientas para la ciencia de datos en R</title>
       <link>/post/compilado-de-herramientas-para-la-ciencias-de-datos-en-r/</link>
       <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/post/compilado-de-herramientas-para-la-ciencias-de-datos-en-r/</guid>
       <description>Este post tiene el objetivo de guardar y mostrar ordenadamente las fuentes de recursos que todo principiante en el mundo de R debiese conocer. Obviamente no nombraré todos los paquetes o libros que existen en torno a R, pero si los lugares donde dar los primeros pasos.
 Este compilado está inspirado en https://awesome-r.com/ (revísalo).

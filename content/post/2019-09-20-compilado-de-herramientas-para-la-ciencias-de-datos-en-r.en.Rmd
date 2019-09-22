@@ -55,7 +55,7 @@ Los paquetes nombrados son los más básicos y con ellos se pueden hacer muchas 
 * [UC Business Analytics R Programming Guide](https://uc-r.github.io/)  
 * [Data Wrangling with R](https://cengel.github.io/R-data-wrangling/)
 * [Building Big Shiny Apps - A Workflow](https://thinkr-open.github.io/building-shiny-apps-workflow/)  
-
+* [Geocomputation with R](https://geocompr.robinlovelace.net/)
 
 ### Otros libros de interés:  
 
@@ -121,8 +121,11 @@ Aún tengo un montón de páginas en favoritos y tweets guardados por revisar pa
 * http://www.nathancunn.com/
 * https://bitsandbricks.github.io/   
 * http://www.thertrader.com/  
+* https://www.r-spatial.org/  
+* http://blog.danwin.com/  
 
 ---
+
 
 
 #### Si tienes sugerencias o comentarios me puedes escribir a psaidp2@gmail.com   

@@ -5,6 +5,8 @@
     <link>/tags/helloworld/</link>
     <description>Recent content in helloworld on Pato Said</description>
     <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
+    <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
     <lastBuildDate>Thu, 19 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/helloworld/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>¡Hola, Mundo!</title>
       <link>/post/hola-mundo/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/post/hola-mundo/</guid>
       <description>Hola, es un agrado que estes aquí! Adelante, pasa 😄 .
 TL;DR: Abro blog relacionado a la ciencia de datos en R.

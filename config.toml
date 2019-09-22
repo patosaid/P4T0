@@ -47,9 +47,9 @@ enableEmoji = true
   desc = "por Fernando G. M. (IG: martini.fotografía)"
 
 [Author]
-  name = "Patricio Said"
+   name = "Patricio Said"
  # website = "yourwebsite.com"
-#  email = "youremail@domain.com"
+   email = "psaidp2@gmail.com"
 #  facebook = "username"
    github = "patosaid"
 #  gitlab = "username"
@@ -61,7 +61,7 @@ enableEmoji = true
 #  stackoverflow = "users/XXXXXXX/username"
 #  snapchat = "username"
    instagram = "patosaid.cl"
-#   youtube = "user/username" # or channel/channelname
+#  youtube = "user/username" # or channel/channelname
 #  soundcloud = "username"
 #  spotify = "username"
 #  bandcamp = "username"

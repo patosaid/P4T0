@@ -1,0 +1,43 @@
+---
+title: Los artículos en los nombres de las comunas
+author: Patricio Said
+date: '2019-09-21'
+slug: los-artículos-en-los-nombres-de-las-comunas
+categories: []
+tags: []
+type: ''
+subtitle: ''
+image: ''
+---
+
+
+```{r}
+library(dplyr)
+library(chilemaps)
+
+regions_map_2 <- regions_map %>% 
+  do.call(rbind, .)
+
+
+nombres <-  regions_map_2 %>% 
+  left_join(
+    territorial_codes %>% select(region_id,commune_name) %>% distinct() 
+  ) %>%  filter(commune_name %in% c("Coquimbo", "Santiago", "Los Angeles"))
+
+vector_nombres <- territorial_codes %>% select(commune_name) %>% distinct() %>% 
+  filter(str_detect(tolower(commune_name),"conc"))
+
+ggplot(regions_map_2) +
+  geom_sf(fill= "white")+
+  geom_sf_label(data = nombres , aes(label = commune_name))
+
+
+nombres <-  regions_map_2 %>% 
+  left_join(
+    territorial_codes %>% select(region_id,commune_name) %>% distinct() 
+  ) %>%  filter(commune_name %in% c("Coquimbo", "Santiago", "Los Angeles"))
+
+
+
+
+```

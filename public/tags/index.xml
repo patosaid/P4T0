@@ -5,16 +5,36 @@
     <link>/tags/</link>
     <description>Recent content in Tags on Pato Said</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 20 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
+    <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
+    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>ggplot2</title>
+      <link>/tags/ggplot2/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mapa</title>
+      <link>/tags/mapa/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/mapa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>compilado</title>
       <link>/tags/compilado/</link>
       <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/tags/compilado/</guid>
       <description></description>
     </item>
@@ -23,7 +43,7 @@
       <title>libros</title>
       <link>/tags/libros/</link>
       <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/tags/libros/</guid>
       <description></description>
     </item>
@@ -32,7 +52,7 @@
       <title>paquetes</title>
       <link>/tags/paquetes/</link>
       <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/tags/paquetes/</guid>
       <description></description>
     </item>
@@ -41,7 +61,7 @@
       <title>recursos</title>
       <link>/tags/recursos/</link>
       <pubDate>Fri, 20 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/tags/recursos/</guid>
       <description></description>
     </item>
@@ -50,7 +70,7 @@
       <title>helloworld</title>
       <link>/tags/helloworld/</link>
       <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
-      
+      <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/tags/helloworld/</guid>
       <description></description>
     </item>
