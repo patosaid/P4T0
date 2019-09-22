@@ -24,8 +24,12 @@ library(ggplot2)</code></pre>
 
 ggplot(data = cl) +
   geom_sf()</code></pre>
-<p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/grafica1-1.png" width="672" /></p>
 <p>Ya tenemos el mapa completo de Chile y con sus regiones delimitadas. Para este ejemplo voy a determinar la zona de estudio desde la Región del Maule hasta la Región de los Ríos, pero tambíen quiero mostrar los alrededores para que el lector pueda ubicarse. Para esto voy a cambiar los límites de la gráfica, de manera de hacer un “zoom” en el mapa. Los límites de la gráfica se pueden modificar filtrando el conjunto de datos según las regiones que queremos mostrar o modificar los parámetros <code>xlim</code> y <code>ylim</code> con un par de coordenadas. Esta última alternativa es más artesanal pero también una solución simple si no tienes experiencia con objetos <code>sf</code>.</p>
-<p>El par de coordenadas las puede obtener desde OpenStreetMap o GoogleMaps.</p>
-<p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/punto1.PNG" /></p>
-<pre class="reval"><code>coord_sf(xlim = c(-67, -80), ylim = c(-42, -28))+</code></pre>
+<p>El par de coordenadas las puedes obtener desde OpenStreetMap o GoogleMaps.<br />
+<img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/punto1.PNG" alt="Coordenada=(-27,-80)" style="width:80.0%" />
+El límite superior lo determiné en la coordenada (-27,-80) y el inferior en (-42,-67). En <code>ggplot()</code> queda de la siguiente forma:</p>
+<pre class="r"><code>ggplot(data = cl) +
+  geom_sf(fill =&quot;white&quot;)+
+  coord_sf(xlim = c(-67, -80), ylim = c(-42, -27))</code></pre>
+<p><img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/grafica2-1.png" width="672" /></p>

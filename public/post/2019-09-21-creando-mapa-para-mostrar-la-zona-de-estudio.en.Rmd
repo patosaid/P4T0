@@ -26,7 +26,7 @@ Para este ejemplo, trabajo con datos de Chile en formato sf provenientes de <htt
 
 Descargamos los datos y graficamos:  
 
-```{r}
+```{r grafica1}
 cl <- read_rds(url("https://biogeo.ucdavis.edu/data/gadm3.6/Rsf/gadm36_CHL_1_sf.rds"))
 #class(cl) sf
 
@@ -36,14 +36,16 @@ ggplot(data = cl) +
 
 Ya tenemos el mapa completo de Chile y con sus regiones delimitadas. Para este ejemplo voy a determinar la zona de estudio desde la Región del Maule hasta la Región de los Ríos, pero tambíen quiero mostrar los alrededores para que el lector pueda ubicarse. Para esto voy a cambiar los límites de la gráfica, de manera de hacer un "zoom" en el mapa. Los límites de la gráfica se pueden modificar filtrando el conjunto de datos según las regiones que queremos mostrar o modificar los parámetros `xlim` y `ylim` con un par de coordenadas. Esta última alternativa es más artesanal pero también una solución simple si no tienes experiencia con objetos `sf`.  
 
-El par de coordenadas las puede obtener desde OpenStreetMap o GoogleMaps.  
+El par de coordenadas las puedes obtener desde OpenStreetMap o GoogleMaps.  
+![Coordenada=(-27,-80)](/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/punto1.PNG){width=80%}
+ El límite superior lo determiné en la coordenada (-27,-80) y el inferior en (-42,-67). En `ggplot()` queda de la siguiente forma:  
 
-![](/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/punto1.PNG)
 
 
-
-```{reval=F}
-coord_sf(xlim = c(-67, -80), ylim = c(-42, -28))+
+```{r grafica2}
+ggplot(data = cl) +
+  geom_sf(fill ="white")+
+  coord_sf(xlim = c(-67, -80), ylim = c(-42, -27))
 ```
 
 
