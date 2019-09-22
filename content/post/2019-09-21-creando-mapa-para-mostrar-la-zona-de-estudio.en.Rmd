@@ -40,6 +40,8 @@ El par de coordenadas las puede obtener desde OpenStreetMap o GoogleMaps.
 
 ![](/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/punto1.PNG)
 
+
+
 ```{reval=F}
 coord_sf(xlim = c(-67, -80), ylim = c(-42, -28))+
 ```
