@@ -63,7 +63,7 @@ Eso sería toda la parte de manipulación. Veamos un pequeño resumen de los dat
 
 ### Un pequeño vistazo 
 
-De un total de 346 comunas solamente 25 inician con artículo. *(Pocos!!!, pensaba que al menos el 20% comenzaba con artículos...)*. La proporción en el género son casi las mismas, mientras los artículso singulares superan a los plurales.  
+De un total de 346 comunas solamente 25 inician con artículo. *(Pocos!!!, pensaba que al menos el 20% comenzaba con artículos...)*. La proporción en el género son casi las mismas, mientras los artículos singulares superan a los plurales.  
 
 ```{r}
 datos %>% group_by(es_articulo)%>% 
@@ -109,22 +109,6 @@ chile <- communes_map %>%
 
 En `addPolygons()` por medio el parámetro `popup` especifiqué un vector en formato HTML para que al momento de cliquear sobre las comunas se despliegue un recuadro con información.  
 
-
-```{r eval= F}
-chile <- chile %>% select(-(province_id :region_id ))
-factpal <- colorFactor(heat.colors(2), chile$es_articulo)
-
-
-leaflet() %>% addTiles() %>%  
-  addPolygons(data = chile,
-              color = ~factpal(es_articulo),
-              fillOpacity = 0.8, stroke = FALSE,
-              popup = paste0( 
-                  "Comuna: " , chile$commune_name  , "<br>",
-                  "Género del artículo: ", chile$genero,"<br>",
-                  "Cantidad del artículo: ", chile$cantidad )
-              )
-```
 
 
 ```{r mapa_chile1, eval= T, message=F, warning=F}
