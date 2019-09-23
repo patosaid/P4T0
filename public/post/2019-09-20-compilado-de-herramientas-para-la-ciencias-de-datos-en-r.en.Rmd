@@ -81,6 +81,8 @@ Los paquetes nombrados son los más básicos y con ellos se pueden hacer muchas 
 * [Interactive Web Apps with shiny](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)  
 * [Data import](http://www.evolution.unibas.ch/teaching/evol_genetics/A_Bioinformatics/Reading/data-import-cheatsheet.pdf)  
 * [Ciencia de datos en R con sparklyr](https://resources.rstudio.com/spanish-pdfs/sparklyrspanish)   
+* [Repo de cheatsheets](https://github.com/rstudio/cheatsheets)
+
 
 # La comunidad de R :globe_with_meridians:
 

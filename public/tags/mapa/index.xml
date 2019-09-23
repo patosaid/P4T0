@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
     <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
-    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mapa/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Visualizando los artículos en los nombres de las comunas de Chile</title>
+      <link>/post/visualizando-comunas-de-chile/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/post/visualizando-comunas-de-chile/</guid>
+      <description>Siempre me ha llamado la atención los nombres de las ciudades, específicamente los que llevan artículos como por ejemplo La Serena, El Quisco, Los Ángeles, La Ligua; o en el caso de los bandas chilenas como La Ley, Los Jaivas, Los Tres, Los Tetas, Los Petinellis, Los Bunkers, Los Prisioneros. Pero en este post voy a trabajar con los nombres de las comunas de Chile que se encuentran disponibles en el paquete chilemaps publicado hace un par de meses por Mauricio Vargas (Pachá).</description>
+    </item>
     
     <item>
       <title>Creando mapa para mostrar el área de estudio</title>
