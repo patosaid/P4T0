@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra) - Pato Said</title>
+  <meta property="og:title" content="Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)" />
+  <meta name="twitter:title" content="Tabla con resumen de estadísticas de una muestra (en HTML y Latex con …" />
+  <meta name="description" content="En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.
+Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de dplyr permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete kableExtra transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).">
+  <meta property="og:description" content="En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.
+Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de dplyr permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete kableExtra transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).">
+  <meta name="twitter:description" content="En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede …">
+  <meta name="author" content="Patricio Said"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Pato Said",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/post\/tabla-resumen-estadisticas\/",
+          "name": "Tabla con resumen de estadísticas de una muestra (en h t m l y latex con kable extra)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Patricio Said"
+  },
+  "headline": "Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)",
+  "description" : "En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.\nCon solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de dplyr permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete kableExtra transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).",
+  "inLanguage" : "en",
+  "wordCount":  792 ,
+  "datePublished" : "2019-10-06T00:00:00",
+  "dateModified" : "2019-10-06T00:00:00",
+  "image" : "\/img\/pink.png",
+  "keywords" : [ "dplyr, tidyr, kableExtra, HTML, Latex, tabla, summarise" ],
+  "mainEntityOfPage" : "\/post\/tabla-resumen-estadisticas\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/img\/pink.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)" />
+<meta property="og:description" content="En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.
+Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de dplyr permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete kableExtra transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).">
+<meta property="og:image" content="/img/pink.png" />
+<meta property="og:url" content="/post/tabla-resumen-estadisticas/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Pato Said" />
+
+  <meta name="twitter:title" content="Tabla con resumen de estadísticas de una muestra (en HTML y Latex con …" />
+  <meta name="twitter:description" content="En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede …">
+  <meta name="twitter:image" content="/img/pink.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Patosaid_cl" />
+  <meta name="twitter:creator" content="@Patosaid_cl" />
+  <link href='/img/favicon.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/pink.png" />
+  <meta name="twitter:image" content="/img/pink.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@Patosaid_cl" />
+  <meta name="twitter:creator" content="@Patosaid_cl" />
+  <meta property="og:url" content="/post/tabla-resumen-estadisticas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pato Said" />
+
+  <meta name="generator" content="Hugo 0.58.2" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Pato Said"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="/css/highlight.min.css" /><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Pato Said</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Pato Said" href="/">
+            <img class="avatar-img" src="/img/pink.png" alt="Pato Said" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 6, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;792&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Patricio Said
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.</p>
+<p>Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de <code>dplyr</code> permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete <code>kableExtra</code> transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).</p>
+<div id="los-datos-a-usar" class="section level2">
+<h2>Los datos a usar</h2>
+<p>Para este ejemplo utilizo los datos <code>vuelos</code> que están dentro del paquete <code>datos</code>. <code>vuelos</code> es la traducción al español del conjunto <code>nycflights13::flights</code>. Este conjunto contiene los datos de los vuelos que despegaron de Nueva York durante el 2013.</p>
+<pre class="r"><code>library(datos)
+library(tidyverse)
+vuelos</code></pre>
+<pre><code>## # A tibble: 336,776 x 19
+##     anio   mes   dia horario_salida salida_programa~ atraso_salida
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;          &lt;int&gt;            &lt;int&gt;         &lt;dbl&gt;
+##  1  2013     1     1            517              515             2
+##  2  2013     1     1            533              529             4
+##  3  2013     1     1            542              540             2
+##  4  2013     1     1            544              545            -1
+##  5  2013     1     1            554              600            -6
+##  6  2013     1     1            554              558            -4
+##  7  2013     1     1            555              600            -5
+##  8  2013     1     1            557              600            -3
+##  9  2013     1     1            557              600            -3
+## 10  2013     1     1            558              600            -2
+## # ... with 336,766 more rows, and 13 more variables:
+## #   horario_llegada &lt;int&gt;, llegada_programada &lt;int&gt;, atraso_llegada &lt;dbl&gt;,
+## #   aerolinea &lt;chr&gt;, vuelo &lt;int&gt;, codigo_cola &lt;chr&gt;, origen &lt;chr&gt;,
+## #   destino &lt;chr&gt;, tiempo_vuelo &lt;dbl&gt;, distancia &lt;dbl&gt;, hora &lt;dbl&gt;,
+## #   minuto &lt;dbl&gt;, fecha_hora &lt;dttm&gt;</code></pre>
+<p>Los datos están en formato tibble. CONTINUAR ACA</p>
+<pre class="r"><code>mayores_aerolineas &lt;- vuelos %&gt;% select(mes, aerolinea) %&gt;% 
+  filter(mes %in% (9:11)) %&gt;% 
+  group_by( aerolinea) %&gt;% 
+    summarise(n = n()) %&gt;% 
+  arrange(desc(n)) %&gt;% 
+  slice(1:3) %&gt;% 
+  ungroup()
+mayores_aerolineas$aerolinea</code></pre>
+<pre><code>## [1] &quot;UA&quot; &quot;EV&quot; &quot;B6&quot;</code></pre>
+<pre class="r"><code>aerolineas %&gt;% 
+  filter(aerolinea %in% mayores_aerolineas$aerolinea)</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   aerolinea nombre                  
+##   &lt;chr&gt;     &lt;chr&gt;                   
+## 1 B6        JetBlue Airways         
+## 2 EV        ExpressJet Airlines Inc.
+## 3 UA        United Air Lines Inc.</code></pre>
+<pre class="r"><code>datos &lt;- vuelos %&gt;% 
+  select(mes, aerolinea, atraso_llegada, atraso_salida) %&gt;% 
+  filter(atraso_salida &gt; 0 , atraso_llegada &gt; 0) %&gt;% 
+  filter(mes &gt;=9, mes &lt;=11) %&gt;% 
+  filter(aerolinea %in% mayores_aerolineas$aerolinea) %&gt;% 
+  arrange(mes)
+datos</code></pre>
+<pre><code>## # A tibble: 8,688 x 4
+##      mes aerolinea atraso_llegada atraso_salida
+##    &lt;int&gt; &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;
+##  1     9 B6                     3            10
+##  2     9 B6                   139           152
+##  3     9 EV                     8            11
+##  4     9 B6                     9             2
+##  5     9 B6                    13            18
+##  6     9 B6                    46            57
+##  7     9 EV                    61            80
+##  8     9 EV                     4            25
+##  9     9 UA                    16            50
+## 10     9 EV                    30            38
+## # ... with 8,678 more rows</code></pre>
+<pre class="r"><code>datos &lt;- datos %&gt;%  
+  mutate(conjunto = sample(c(&quot;train&quot;,&quot;test&quot;), nrow(datos), replace = T, prob = c(0.8,0.2)))
+
+datos_train &lt;- datos %&gt;% select(mes,aerolinea, conjunto, atraso_llegada) %&gt;% 
+  filter(conjunto == &quot;train&quot;) %&gt;% 
+  group_by(mes, aerolinea) %&gt;% 
+  summarise(n_train = n(), 
+            min_llegada_train = min(atraso_llegada),
+            prom_llegada_train = mean(atraso_llegada),
+            max_llegada_train = max(atraso_llegada),
+            sd_llegada_train = sd(atraso_llegada)
+            ) %&gt;% 
+  ungroup()
+
+datos_test &lt;- datos %&gt;% select(mes,aerolinea, conjunto, atraso_llegada) %&gt;% 
+  filter(conjunto == &quot;test&quot;) %&gt;% 
+  group_by(mes, aerolinea) %&gt;% 
+  summarise(n_test = n(), 
+            min_llegada_test = min(atraso_llegada),
+            prom_llegada_test = mean(atraso_llegada),
+            max_llegada_test = max(atraso_llegada),
+            sd_llegada_test = sd(atraso_llegada)
+            ) %&gt;% 
+  ungroup()
+
+library(kableExtra) 
+resumen &lt;- left_join(datos_train,datos_test) %&gt;% 
+  mutate(mes = case_when(
+                      mes == 9 ~ &quot;Septiembre&quot;,
+                      mes ==10 ~ &quot;Octubre&quot;,
+                      mes ==11 ~ &quot;Noviembre&quot;)) %&gt;% 
+  left_join(aerolineas) %&gt;% 
+  select(mes, nombre, everything(), - (aerolinea))</code></pre>
+<pre class="r"><code>head1 &lt;- paste0(&quot;Conjunto entrenamiento (N=&quot;, sum(datos_train$n_train),&quot;)&quot;,collapse = &quot;&quot;)
+head2 &lt;- paste0(&quot;Conjunto prueba (N=&quot; , sum(datos_test$n_test), &quot;)&quot;)
+
+resumen %&gt;% select(-mes) %&gt;% 
+kable( format.args = list(decimal.mark = &#39;,&#39;, big.mark = &quot;.&quot;),
+         col.names = ( c(&quot;Aerolínea&quot;,rep(c(&quot;N&quot;,&quot;Min.&lt;br&gt;*(minutos)*&quot;,&quot;Media&lt;br&gt;*(minutos)*&quot;,&quot;Max.&lt;br&gt;*(minutos)*&quot;,&quot;D.E&lt;br&gt;*(minutos)*&quot;),2))), 
+         digits = 1 , escape = F) %&gt;% 
+ kable_styling(c(&quot;striped&quot;),font_size = 11) %&gt;% 
+ add_header_above(header = c(&quot; &quot;=1, &quot;Conjunto entrenamiento (N=6.973)&quot; = 5, &quot;Conjunto prueba (N=1.715)&quot; = 5 ) ) %&gt;% 
+  pack_rows(&quot;Septiembre&quot;, 1, 3) %&gt;% 
+  pack_rows(&quot;Octubre&quot;, 4, 6) %&gt;% 
+  pack_rows(&quot;Noviembre&quot;, 7,9)</code></pre>
+<table class="table table-striped" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="border-bottom:hidden" colspan="1">
+</th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Conjunto entrenamiento (N=6.973)
+</div>
+</th>
+<th style="border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="5">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Conjunto prueba (N=1.715)
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Aerolínea
+</th>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Min.<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+Media<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+Max.<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+D.E<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+Min.<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+Media<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+Max.<br><em>(minutos)</em>
+</th>
+<th style="text-align:right;">
+D.E<br><em>(minutos)</em>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="3">
+<td colspan="11" style="border-bottom: 1px solid;">
+<strong>Septiembre</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+JetBlue Airways
+</td>
+<td style="text-align:right;">
+609
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+50,9
+</td>
+<td style="text-align:right;">
+396
+</td>
+<td style="text-align:right;">
+59,6
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+54,4
+</td>
+<td style="text-align:right;">
+317
+</td>
+<td style="text-align:right;">
+66,6
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+ExpressJet Airlines Inc. 
+</td>
+<td style="text-align:right;">
+751
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+50,6
+</td>
+<td style="text-align:right;">
+444
+</td>
+<td style="text-align:right;">
+59,4
+</td>
+<td style="text-align:right;">
+172
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+52,2
+</td>
+<td style="text-align:right;">
+352
+</td>
+<td style="text-align:right;">
+57,8
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+United Air Lines Inc. 
+</td>
+<td style="text-align:right;">
+578
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+49,6
+</td>
+<td style="text-align:right;">
+406
+</td>
+<td style="text-align:right;">
+70,0
+</td>
+<td style="text-align:right;">
+135
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+61,3
+</td>
+<td style="text-align:right;">
+370
+</td>
+<td style="text-align:right;">
+72,5
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="11" style="border-bottom: 1px solid;">
+<strong>Octubre</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+JetBlue Airways
+</td>
+<td style="text-align:right;">
+553
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+36,2
+</td>
+<td style="text-align:right;">
+366
+</td>
+<td style="text-align:right;">
+43,0
+</td>
+<td style="text-align:right;">
+144
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+41,6
+</td>
+<td style="text-align:right;">
+248
+</td>
+<td style="text-align:right;">
+51,2
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+ExpressJet Airlines Inc. 
+</td>
+<td style="text-align:right;">
+1.156
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+51,9
+</td>
+<td style="text-align:right;">
+318
+</td>
+<td style="text-align:right;">
+50,6
+</td>
+<td style="text-align:right;">
+304
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+50,0
+</td>
+<td style="text-align:right;">
+291
+</td>
+<td style="text-align:right;">
+47,9
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+United Air Lines Inc. 
+</td>
+<td style="text-align:right;">
+869
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+35,4
+</td>
+<td style="text-align:right;">
+288
+</td>
+<td style="text-align:right;">
+42,2
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+34,3
+</td>
+<td style="text-align:right;">
+252
+</td>
+<td style="text-align:right;">
+44,9
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="11" style="border-bottom: 1px solid;">
+<strong>Noviembre</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+JetBlue Airways
+</td>
+<td style="text-align:right;">
+647
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+36,7
+</td>
+<td style="text-align:right;">
+299
+</td>
+<td style="text-align:right;">
+38,5
+</td>
+<td style="text-align:right;">
+154
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+37,3
+</td>
+<td style="text-align:right;">
+217
+</td>
+<td style="text-align:right;">
+39,2
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+ExpressJet Airlines Inc. 
+</td>
+<td style="text-align:right;">
+990
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+42,4
+</td>
+<td style="text-align:right;">
+389
+</td>
+<td style="text-align:right;">
+43,0
+</td>
+<td style="text-align:right;">
+249
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+43,7
+</td>
+<td style="text-align:right;">
+250
+</td>
+<td style="text-align:right;">
+42,9
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+United Air Lines Inc. 
+</td>
+<td style="text-align:right;">
+832
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+35,0
+</td>
+<td style="text-align:right;">
+346
+</td>
+<td style="text-align:right;">
+47,4
+</td>
+<td style="text-align:right;">
+202
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+37,3
+</td>
+<td style="text-align:right;">
+291
+</td>
+<td style="text-align:right;">
+47,2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="//tags/dplyr/">dplyr</a>&nbsp;
+            
+              <a href="//tags/tidyr/">tidyr</a>&nbsp;
+            
+              <a href="//tags/kableextra/">kableExtra</a>&nbsp;
+            
+              <a href="//tags/html/">HTML</a>&nbsp;
+            
+              <a href="//tags/latex/">Latex</a>&nbsp;
+            
+              <a href="//tags/tabla/">tabla</a>&nbsp;
+            
+              <a href="//tags/summarise/">summarise</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=%2fpost%2ftabla-resumen-estadisticas%2f&amp;text=Tabla%20con%20resumen%20de%20estad%c3%adsticas%20de%20una%20muestra%20%28en%20HTML%20y%20Latex%20con%20KableExtra%29&amp;via=Patosaid_cl" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2ftabla-resumen-estadisticas%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=%2fpost%2ftabla-resumen-estadisticas%2f&amp;title=Tabla%20con%20resumen%20de%20estad%c3%adsticas%20de%20una%20muestra%20%28en%20HTML%20y%20Latex%20con%20KableExtra%29" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=%2fpost%2ftabla-resumen-estadisticas%2f&amp;title=Tabla%20con%20resumen%20de%20estad%c3%adsticas%20de%20una%20muestra%20%28en%20HTML%20y%20Latex%20con%20KableExtra%29" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=%2fpost%2ftabla-resumen-estadisticas%2f&amp;title=Tabla%20con%20resumen%20de%20estad%c3%adsticas%20de%20una%20muestra%20%28en%20HTML%20y%20Latex%20con%20KableExtra%29" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2ftabla-resumen-estadisticas%2f&amp;description=Tabla%20con%20resumen%20de%20estad%c3%adsticas%20de%20una%20muestra%20%28en%20HTML%20y%20Latex%20con%20KableExtra%29" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/post/visualizando-comunas-de-chile/">Visualizando los artículos en los nombres de las comunas de Chile</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/post/visualizando-comunas-de-chile/" data-toggle="tooltip" data-placement="top" title="Visualizando los artículos en los nombres de las comunas de Chile">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:psaidp2@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/patosaid" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/Patosaid_cl" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/patosaid.cl" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Patricio Said
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="/">Pato Said</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.58.2</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -7,10 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
     <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
-    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dplyr</title>
+      <link>/tags/dplyr/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/dplyr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML</title>
+      <link>/tags/html/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kableExtra</title>
+      <link>/tags/kableextra/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/kableextra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
+      <link>/tags/latex/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>summarise</title>
+      <link>/tags/summarise/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/summarise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tabla</title>
+      <link>/tags/tabla/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/tabla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tidyr</title>
+      <link>/tags/tidyr/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/tags/tidyr/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>chilemaps</title>
@@ -18,15 +81,6 @@
       <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
       <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/tags/chilemaps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dplyr</title>
-      <link>/tags/dplyr/</link>
-      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
-      <author>psaidp2@gmail.com (Patricio Said)</author>
-      <guid>/tags/dplyr/</guid>
       <description></description>
     </item>
     

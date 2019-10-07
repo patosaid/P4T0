@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
     <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
-    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/dplyr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)</title>
+      <link>/post/tabla-resumen-estadisticas/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/post/tabla-resumen-estadisticas/</guid>
+      <description>En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.
+Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de dplyr permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete kableExtra transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).</description>
+    </item>
     
     <item>
       <title>Visualizando los artículos en los nombres de las comunas de Chile</title>
