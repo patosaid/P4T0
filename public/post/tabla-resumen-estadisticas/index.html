@@ -65,7 +65,7 @@ Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil
   "headline": "Tabla resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)",
   "description" : "En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.\nCon solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de dplyr permiten calcular diferentes estadísticas según grupos. Una vez terminada la tabla el paquete kableExtra transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).",
   "inLanguage" : "en",
-  "wordCount":  1083 ,
+  "wordCount":  1087 ,
   "datePublished" : "2019-10-06T00:00:00",
   "dateModified" : "2019-10-06T00:00:00",
   "image" : "\/img\/pink.png",
@@ -258,7 +258,7 @@ Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;6&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1083&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1087&nbsp;words
   
   
     
@@ -315,8 +315,8 @@ vuelos</code></pre>
 ## #   minuto &lt;dbl&gt;, fecha_hora &lt;dttm&gt;</code></pre>
 <p>Los datos vienen en formato tibble. De manera de ejemplo y poder probar las agrupaciones de columnas y filas al momento de mostrar la tabla voy a filtrar el conjunto de datos en un rango de tres meses (septiembre a noviembre) y trabajar con los datos de las 3 aerolíneas con más vuelos.</p>
 </div>
-<div id="preparando-los-datos" class="section level1">
-<h1>Preparando los datos:</h1>
+<div id="preparando-los-datos" class="section level2">
+<h2>Preparando los datos</h2>
 <p><code>mayores_aerolineas</code> guarda las 3 aerolineas con mas vuelos:</p>
 <pre class="r"><code>mayores_aerolineas &lt;- vuelos %&gt;% select(mes, aerolinea) %&gt;% 
   filter(mes %in% (9:11)) %&gt;% 
@@ -391,6 +391,11 @@ datos_test &lt;- datos %&gt;% select(mes,aerolinea, conjunto, atraso_llegada) %&
   left_join(aerolineas) %&gt;% 
   select(mes, nombre, everything(), - (aerolinea))</code></pre>
 <p>Para mostrar la tabla en formato se utilizó la función <code>kable()</code> del paquete <code>kableExtra</code>. Por defecto el tipo de formato está en HTML. En los nombres de columnas se agregó <code>&lt;br&gt;</code> (salto de línea en HTML). Para agrupar filas se podría usar <code>collapse_rows()</code> según la variable <code>mes</code>.</p>
+</div>
+<div id="creando-tabla" class="section level1">
+<h1>Creando tabla</h1>
+<div id="html" class="section level2">
+<h2>HTML</h2>
 <pre class="r"><code>library(kableExtra) 
 resumen %&gt;% select(-mes) %&gt;% 
 kable( format = &quot;html&quot;, 
@@ -474,34 +479,34 @@ D.E<br><em>(minutos)</em>
 JetBlue Airways
 </td>
 <td style="text-align:right;">
-623
+597
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-50,4
+51,1
 </td>
 <td style="text-align:right;">
 396
 </td>
 <td style="text-align:right;">
-62,0
+62,3
 </td>
 <td style="text-align:right;">
-125
+151
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-56,9
+53,0
 </td>
 <td style="text-align:right;">
-272
+317
 </td>
 <td style="text-align:right;">
-55,4
+55,7
 </td>
 </tr>
 <tr>
@@ -509,34 +514,34 @@ JetBlue Airways
 ExpressJet Airlines Inc. 
 </td>
 <td style="text-align:right;">
-734
+744
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-52,7
+51,3
 </td>
 <td style="text-align:right;">
 444
 </td>
 <td style="text-align:right;">
-61,4
+60,4
 </td>
 <td style="text-align:right;">
-189
+179
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-43,9
+49,3
 </td>
 <td style="text-align:right;">
-321
+335
 </td>
 <td style="text-align:right;">
-48,6
+53,5
 </td>
 </tr>
 <tr>
@@ -544,34 +549,34 @@ ExpressJet Airlines Inc. 
 United Air Lines Inc. 
 </td>
 <td style="text-align:right;">
-571
+572
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-49,2
-</td>
-<td style="text-align:right;">
-405
-</td>
-<td style="text-align:right;">
-66,4
-</td>
-<td style="text-align:right;">
-142
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-62,7
+52,6
 </td>
 <td style="text-align:right;">
 406
 </td>
 <td style="text-align:right;">
-84,7
+71,2
+</td>
+<td style="text-align:right;">
+141
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+48,6
+</td>
+<td style="text-align:right;">
+332
+</td>
+<td style="text-align:right;">
+68,1
 </td>
 </tr>
 <tr grouplength="3">
@@ -584,34 +589,34 @@ United Air Lines Inc. 
 JetBlue Airways
 </td>
 <td style="text-align:right;">
-562
+559
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-38,4
+37,1
 </td>
 <td style="text-align:right;">
 366
 </td>
 <td style="text-align:right;">
-46,7
+44,9
 </td>
 <td style="text-align:right;">
-135
+138
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-33,0
+38,1
 </td>
 <td style="text-align:right;">
-233
+225
 </td>
 <td style="text-align:right;">
-35,8
+45,0
 </td>
 </tr>
 <tr>
@@ -619,34 +624,34 @@ JetBlue Airways
 ExpressJet Airlines Inc. 
 </td>
 <td style="text-align:right;">
-1.157
+1.171
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-52,7
-</td>
-<td style="text-align:right;">
-314
-</td>
-<td style="text-align:right;">
-51,0
-</td>
-<td style="text-align:right;">
-303
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-47,2
+51,9
 </td>
 <td style="text-align:right;">
 318
 </td>
 <td style="text-align:right;">
-46,3
+50,8
+</td>
+<td style="text-align:right;">
+289
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+50,0
+</td>
+<td style="text-align:right;">
+252
+</td>
+<td style="text-align:right;">
+47,0
 </td>
 </tr>
 <tr>
@@ -654,22 +659,7 @@ ExpressJet Airlines Inc. 
 United Air Lines Inc. 
 </td>
 <td style="text-align:right;">
-858
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-35,1
-</td>
-<td style="text-align:right;">
-288
-</td>
-<td style="text-align:right;">
-43,6
-</td>
-<td style="text-align:right;">
-215
+869
 </td>
 <td style="text-align:right;">
 1
@@ -678,10 +668,25 @@ United Air Lines Inc. 
 35,7
 </td>
 <td style="text-align:right;">
-216
+288
 </td>
 <td style="text-align:right;">
-39,1
+43,5
+</td>
+<td style="text-align:right;">
+204
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+32,8
+</td>
+<td style="text-align:right;">
+241
+</td>
+<td style="text-align:right;">
+39,3
 </td>
 </tr>
 <tr grouplength="3">
@@ -694,7 +699,22 @@ United Air Lines Inc. 
 JetBlue Airways
 </td>
 <td style="text-align:right;">
-652
+639
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+37,0
+</td>
+<td style="text-align:right;">
+299
+</td>
+<td style="text-align:right;">
+39,2
+</td>
+<td style="text-align:right;">
+162
 </td>
 <td style="text-align:right;">
 1
@@ -703,25 +723,10 @@ JetBlue Airways
 36,2
 </td>
 <td style="text-align:right;">
-299
+185
 </td>
 <td style="text-align:right;">
-39,5
-</td>
-<td style="text-align:right;">
-149
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-39,5
-</td>
-<td style="text-align:right;">
-148
-</td>
-<td style="text-align:right;">
-34,5
+36,3
 </td>
 </tr>
 <tr>
@@ -729,34 +734,34 @@ JetBlue Airways
 ExpressJet Airlines Inc. 
 </td>
 <td style="text-align:right;">
-1.003
+1.013
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-42,3
+42,4
 </td>
 <td style="text-align:right;">
 389
 </td>
 <td style="text-align:right;">
-42,3
+43,2
 </td>
 <td style="text-align:right;">
-236
+226
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-44,2
+43,9
 </td>
 <td style="text-align:right;">
-334
+302
 </td>
 <td style="text-align:right;">
-45,9
+41,9
 </td>
 </tr>
 <tr>
@@ -764,7 +769,7 @@ ExpressJet Airlines Inc. 
 United Air Lines Inc. 
 </td>
 <td style="text-align:right;">
-829
+846
 </td>
 <td style="text-align:right;">
 1
@@ -773,25 +778,25 @@ United Air Lines Inc. 
 36,1
 </td>
 <td style="text-align:right;">
-346
+330
 </td>
 <td style="text-align:right;">
-47,9
+47,3
 </td>
 <td style="text-align:right;">
-205
+188
 </td>
 <td style="text-align:right;">
 1
 </td>
 <td style="text-align:right;">
-33,1
+32,7
 </td>
 <td style="text-align:right;">
-335
+346
 </td>
 <td style="text-align:right;">
-45,1
+47,6
 </td>
 </tr>
 </tbody>
@@ -808,6 +813,9 @@ United Air Lines Inc. 
 </tr>
 </tfoot>
 </table>
+</div>
+<div id="latex" class="section level2">
+<h2>Latex</h2>
 <p>Para formato Latex se debe especificar en el argumento <code>formato = "latex"</code>. Algunos argumentos son difentes, como en el caso de los saltos en líneas en los nombres:</p>
 <pre class="r"><code>resumen %&gt;% select(-mes) %&gt;% 
  kable( format.args = list(decimal.mark = &#39;,&#39;, big.mark = &quot;.&quot;),
@@ -833,6 +841,7 @@ United Air Lines Inc. 
 <div class="figure">
 <img src="/post/2019-10-06-tabla-de-estadisticas.en_files/figure-html/Capture1.PNG" alt="Salida en formato latex" style="width:100.0%" />
 <p class="caption">Salida en formato latex</p>
+</div>
 </div>
 </div>
 

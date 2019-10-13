@@ -29,7 +29,7 @@ vuelos
 
 Los datos vienen en formato tibble. De manera de ejemplo y poder probar las agrupaciones de columnas y filas al momento de mostrar la tabla voy a filtrar el conjunto de datos en un rango de tres meses (septiembre a noviembre) y trabajar con los datos de las 3 aerolíneas con más vuelos.  
 
-# Preparando los datos:  
+## Preparando los datos  
 
 `mayores_aerolineas` guarda las 3 aerolineas con mas vuelos:  
 
@@ -103,6 +103,8 @@ resumen <- left_join(datos_train,datos_test) %>%
 
 Para mostrar la tabla en formato se utilizó la función `kable()` del paquete `kableExtra`. Por defecto el tipo de formato está en HTML. En los nombres de columnas se agregó `<br>` (salto de línea en HTML). Para agrupar filas se podría usar `collapse_rows()` según la variable `mes`.  
 
+# Creando tabla  
+## HTML  
 ```{r}
 library(kableExtra) 
 resumen %>% select(-mes) %>% 
@@ -125,6 +127,8 @@ kable( format = "html",
    footnote(general = "D.E: Desviación estandar.",
             footnote_as_chunk = F)
 ```
+
+## Latex  
 
 Para formato Latex se debe especificar en el argumento `formato = "latex"`. Algunos argumentos son difentes, como en el caso de los saltos en líneas en los nombres:  
 
