@@ -153,5 +153,5 @@ resumen %>% select(-mes) %>%
 
 La salida sería algo así:  
 
-![salida_latex](/post/2019-10-06-tabla-de-estadisticas.en_files/figure-html/Capture1.PNG){width=80%}  
+![Salida en formato latex](/post/2019-10-06-tabla-de-estadisticas.en_files/figure-html/Capture1.PNG){width=100%}  
 
