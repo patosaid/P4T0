@@ -1,5 +1,5 @@
 ---
-title: Tabla con resumen de estadísticas de una muestra (en HTML y Latex con KableExtra) 
+title: Tabla resumen de estadísticas de una muestra (en HTML y Latex con KableExtra) 
 author: Patricio Said
 date: '2019-10-06'
 slug: tabla-resumen-estadisticas
@@ -11,7 +11,7 @@ description: ""
 
 En cualquier trabajo de investigación que involucre una muestra o conjunto de datos es importante mostrar un cuadro resumen que contenga estadísticas descriptivas del conjunto, de esta manera se puede comunicar de forma clara la dimensión de los datos del estudio.  
 
-Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de `dplyr` permiten calcular diferentes estadísticas según diferentes grupos. Una vez terminada la tabla el paquete `kableExtra` transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).  
+Con solo dos herramientas la construcción de tablas resúmnes resulta muy facil y sencilla. Las funciones de `dplyr` permiten calcular diferentes estadísticas según grupos. Una vez terminada la tabla el paquete `kableExtra` transforma facimente la información de la tabla a formato HTML o Latex (para visualizar en PDF).  
 
 ## Los datos a usar  
 
@@ -27,7 +27,12 @@ library(tidyverse)
 vuelos
 ```
 
-Los datos están en formato tibble. CONTINUAR ACA
+Los datos vienen en formato tibble. De manera de ejemplo y poder probar las agrupaciones de columnas y filas al momento de mostrar la tabla voy a filtrar el conjunto de datos en un rango de tres meses (septiembre a noviembre) y trabajar con los datos de las 3 aerolíneas con más vuelos.  
+
+# Preparando los datos:  
+
+`mayores_aerolineas` guarda las 3 aerolineas con mas vuelos:  
+
 ```{r} 
 mayores_aerolineas <- vuelos %>% select(mes, aerolinea) %>% 
   filter(mes %in% (9:11)) %>% 
@@ -36,10 +41,13 @@ mayores_aerolineas <- vuelos %>% select(mes, aerolinea) %>%
   arrange(desc(n)) %>% 
   slice(1:3) %>% 
   ungroup()
-mayores_aerolineas$aerolinea
+
+# Busca los nombres  
 aerolineas %>% 
   filter(aerolinea %in% mayores_aerolineas$aerolinea)
 ```
+
+En `datos` guarda los datos a utilizar para este ejemplo.  
 
 ```{r}
 datos <- vuelos %>% 
@@ -50,6 +58,8 @@ datos <- vuelos %>%
   arrange(mes)
 datos
 ```
+
+De manera de hacer un ejemplo práctico, generalmente en los papers que ajustan modelos de predicción suele mostrarse el conjunto de datos separados en "ajuste" y "prueba". Para esto, el conjunto `datos` se dividió aleatoriamente en proporción 80:20. Luego para cada conjunto se calcularon algunas estadísticas en base a la variable `atraso_llegada`. 
 
 ```{r}
 datos <- datos %>%  
@@ -76,8 +86,12 @@ datos_test <- datos %>% select(mes,aerolinea, conjunto, atraso_llegada) %>%
             sd_llegada_test = sd(atraso_llegada)
             ) %>% 
   ungroup()
+```
 
-library(kableExtra) 
+
+Luego en `resumen` se guardó la información a mostrar en la tabla.  
+```{r}
+
 resumen <- left_join(datos_train,datos_test) %>% 
   mutate(mes = case_when(
                       mes == 9 ~ "Septiembre",
@@ -87,24 +101,57 @@ resumen <- left_join(datos_train,datos_test) %>%
   select(mes, nombre, everything(), - (aerolinea))
 ```
 
+Para mostrar la tabla en formato se utilizó la función `kable()` del paquete `kableExtra`. Por defecto el tipo de formato está en HTML. En los nombres de columnas se agregó `<br>` (salto de línea en HTML). Para agrupar filas se podría usar `collapse_rows()` según la variable `mes`.  
 
 ```{r}
-head1 <- paste0("Conjunto entrenamiento (N=", sum(datos_train$n_train),")",collapse = "")
-head2 <- paste0("Conjunto prueba (N=" , sum(datos_test$n_test), ")")
-
+library(kableExtra) 
 resumen %>% select(-mes) %>% 
-kable( format.args = list(decimal.mark = ',', big.mark = "."),
-         col.names = ( c("Aerolínea",rep(c("N","Min.<br>*(minutos)*","Media<br>*(minutos)*","Max.<br>*(minutos)*","D.E<br>*(minutos)*"),2))), 
-         digits = 1 , escape = F) %>% 
- kable_styling(c("striped"),font_size = 11) %>% 
- add_header_above(header = c(" "=1, "Conjunto entrenamiento (N=6.973)" = 5, "Conjunto prueba (N=1.715)" = 5 ) ) %>% 
+kable( format = "html", 
+       format.args = list(decimal.mark = ',', big.mark = "."),
+       col.names = ( c("Aerolínea",
+                       rep(c("N","Min.<br>*(minutos)*",
+                             "Media<br>*(minutos)*",
+                             "Max.<br>*(minutos)*",
+                             "D.E<br>*(minutos)*"),
+                           2))), 
+         digits = 1 , escape = F) %>%
+  kable_styling(c("striped"),font_size = 11) %>% 
+  add_header_above(header = c(" "=1, 
+                              "Conjunto entrenamiento (N=6.973)" = 5,
+                              "Conjunto prueba (N=1.715)" = 5 ) ) %>% 
   pack_rows("Septiembre", 1, 3) %>% 
   pack_rows("Octubre", 4, 6) %>% 
-  pack_rows("Noviembre", 7,9)
+  pack_rows("Noviembre", 7,9) %>% 
+   footnote(general = "D.E: Desviación estandar.",
+            footnote_as_chunk = F)
 ```
 
+Para formato Latex se debe especificar en el argumento `formato = "latex"`. Algunos argumentos son difentes, como en el caso de los saltos en líneas en los nombres:  
 
-```{r}
-
+```{r eval = F}
+resumen %>% select(-mes) %>% 
+ kable( format.args = list(decimal.mark = ',', big.mark = "."),
+        digits = 2, "latex", booktabs= T, linesep="", 
+        escape = F, 
+        caption = "Resumen estadístico",
+        col.names = linebreak( c("Aerolínea",
+                       rep(c("N","Min.\n(minutos",
+                             "Media\n(minutos)",
+                             "Max.\n(minutos)",
+                             "D.E\n(minutos)"),
+                           2)))) %>%
+  kable_styling(latex_options="scale_down") %>% 
+  add_header_above(header = c(" "=1, 
+                              "Conjunto entrenamiento (N=6.973)" = 5,
+                              "Conjunto prueba (N=1.715)" = 5 ) ) %>% 
+  pack_rows("Septiembre", 1, 3) %>% 
+  pack_rows("Octubre", 4, 6) %>% 
+  pack_rows("Noviembre", 7,9) %>% 
+   footnote(symbol = "D.E: Desviación estandar.",
+            footnote_as_chunk = F)
 ```
+
+La salida sería algo así:  
+
+![salida_latex](/post/2019-10-06-tabla-de-estadisticas.en_files/figure-html/Capture1.PNG){width=80%}  
 
