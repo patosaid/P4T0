@@ -4,17 +4,52 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/blog/</loc>
-    <lastmod>2019-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-10-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/keras/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/keras-en-shiny-app/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/machine-learning/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/reconocimiento-de-im%C3%A1genes/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/shiny/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,11 +73,6 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-10-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/summarise/</loc>
     <lastmod>2019-10-06T00:00:00+00:00</lastmod>
   </url>
@@ -54,11 +84,6 @@
   
   <url>
     <loc>/post/tabla-resumen-estadisticas/</loc>
-    <lastmod>2019-10-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-10-06T00:00:00+00:00</lastmod>
   </url>
   

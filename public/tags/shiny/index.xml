@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Pato Said</title>
-    <link>/categories/</link>
-    <description>Recent content in Categories on Pato Said</description>
+    <title>shiny on Pato Said</title>
+    <link>/tags/shiny/</link>
+    <description>Recent content in shiny on Pato Said</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
     <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
     <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/shiny/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>blog</title>
-      <link>/categories/blog/</link>
+      <title>Keras en Shiny app</title>
+      <link>/post/keras-en-shiny-app/</link>
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       <author>psaidp2@gmail.com (Patricio Said)</author>
-      <guid>/categories/blog/</guid>
-      <description></description>
+      <guid>/post/keras-en-shiny-app/</guid>
+      <description>hola que pasa</description>
     </item>
     
   </channel>

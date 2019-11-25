@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>psaidp2@gmail.com (Patricio Said)</managingEditor>
     <webMaster>psaidp2@gmail.com (Patricio Said)</webMaster>
-    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Keras en Shiny app</title>
+      <link>/post/keras-en-shiny-app/</link>
+      <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
+      <author>psaidp2@gmail.com (Patricio Said)</author>
+      <guid>/post/keras-en-shiny-app/</guid>
+      <description>hola que pasa</description>
+    </item>
     
     <item>
       <title>Tabla resumen de estadísticas de una muestra (en HTML y Latex con KableExtra)</title>
