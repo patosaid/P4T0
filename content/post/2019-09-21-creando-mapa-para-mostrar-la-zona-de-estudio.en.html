@@ -1,5 +1,5 @@
 ---
-title: 'Creando mapa para mostrar el área de estudio'
+title: 'Creando mapa para mostrar el área geográfica de un estudio con estilo paper'
 subtitle: ""
 author: Patricio Said
 date: '2019-09-21'
@@ -19,7 +19,7 @@ description: ""
 <script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
 <link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
-<script src="/rmarkdown-libs/leaflet-providers/leaflet-providers.js"></script>
+<script src="/rmarkdown-libs/leaflet-providers/leaflet-providers_1.9.0.js"></script>
 <script src="/rmarkdown-libs/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
 
 
@@ -39,7 +39,7 @@ ggplot(data = cl) +
 <p>Ya tenemos el mapa completo de Chile y con sus regiones delimitadas. Para este ejemplo voy a determinar la zona de estudio desde la Región del Maule hasta la Región de los Ríos, pero tambíen quiero mostrar los alrededores para que el lector pueda ubicarse. Para esto voy a cambiar los límites de la gráfica, de manera de hacer un “zoom” en el mapa. Los límites de la gráfica se pueden modificar filtrando el conjunto de datos según las regiones que queremos mostrar o modificar los parámetros <code>xlim</code> y <code>ylim</code> con un par de coordenadas. Esta última alternativa es más artesanal pero también una solución simple si no tienes experiencia con objetos <code>sf</code>.</p>
 <p>El par de coordenadas las puedes obtener desde OpenStreetMap o GoogleMaps.</p>
 <div class="figure">
-<img src="/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/punto1.PNG" alt="Coordenada=(-27,-80)" style="width:80.0%" />
+<img src="public/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/figure-html/punto1.PNG" alt="Coordenada=(-27,-80)" style="width:80.0%" />
 <p class="caption">Coordenada=(-27,-80)</p>
 </div>
 <p>El límite superior lo determiné en la coordenada (-27,-80) y el inferior en (-42,-67). En <code>ggplot()</code> queda de la siguiente forma:</p>
