@@ -38,7 +38,7 @@ Ya tenemos el mapa completo de Chile y con sus regiones delimitadas. Para este e
 
 El par de coordenadas las puedes obtener desde OpenStreetMap o GoogleMaps.  
 
-![Coordenada=(-27,-80)](img/punto1.PNG){width=80%}  
+![](/post/2019-09-21-creando-mapa-para-mostrar-la-zona-de-estudio.en_files/punto1.PNG)
 
 El límite superior lo determiné en la coordenada (-27,-80) y el inferior en (-42,-67). En `ggplot()` queda de la siguiente forma:  
 
