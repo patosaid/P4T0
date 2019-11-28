@@ -18,12 +18,12 @@
   </url>
   
   <url>
-    <loc>/tags/keras/</loc>
+    <loc>/tags/imaginet/</loc>
     <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/keras-en-shiny-app/</loc>
+    <loc>/tags/keras/</loc>
     <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,6 +39,11 @@
   
   <url>
     <loc>/tags/reconocimiento-de-im%C3%A1genes/</loc>
+    <lastmod>2019-11-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/keras-en-shiny-app/</loc>
     <lastmod>2019-11-24T00:00:00+00:00</lastmod>
   </url>
   

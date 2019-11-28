@@ -13,12 +13,13 @@
     
     
     <item>
-      <title>Keras en Shiny app</title>
+      <title>Reconocimiento de imágenes en una aplicación web (Shiny y Keras)</title>
       <link>/post/keras-en-shiny-app/</link>
       <pubDate>Sun, 24 Nov 2019 00:00:00 +0000</pubDate>
       <author>psaidp2@gmail.com (Patricio Said)</author>
       <guid>/post/keras-en-shiny-app/</guid>
-      <description>hola que pasa</description>
+      <description>En este post explico a grandes rasgos cómo crear una app que implementa un modelo de machine learning para el reconocimiento de imágenes. Básicamente con dos herramientas es posible crear este tipo de aplicaciones en R: por medio de Shiny junto a cualquier framework que permita importar un modelo de machine learning entrenado, en este caso Keras.
+ShinyEl paquete shiny permite construir sitios web interactivos (apps) de manera facil.</description>
     </item>
     
     <item>

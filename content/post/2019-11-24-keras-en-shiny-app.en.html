@@ -1,10 +1,10 @@
 ---
-title: Keras en Shiny app
+title: Reconocimiento de imágenes en una aplicación web (Shiny y Keras)
 author: ''
 date: '2019-11-24'
 slug: keras-en-shiny-app
 categories: ["blog"]
-tags: ["keras","shiny","machine learning", "reconocimiento de imágenes"]
+tags: ["keras","shiny","machine learning", "reconocimiento de imágenes","imaginet"]
 type: ''
 subtitle: ''
 image: ''
@@ -12,4 +12,51 @@ image: ''
 
 
 
-<p>hola que pasa</p>
+<p>En este post explico a grandes rasgos cómo crear una app que implementa un modelo de machine learning para el reconocimiento de imágenes. Básicamente con dos herramientas es posible crear este tipo de aplicaciones en R: por medio de <a href="https://shiny.rstudio.com/"><strong>Shiny</strong></a> junto a cualquier framework que permita importar un modelo de machine learning entrenado, en este caso <a href="https://keras.rstudio.com/"><strong>Keras</strong></a>.</p>
+<div id="shiny" class="section level3">
+<h3>Shiny</h3>
+<p>El paquete <code>shiny</code> permite construir sitios web interactivos (apps) de manera facil. Shiny transforma tu código R en HTML, CSS y Javascript, que son básicos para el funcionamiento de una aplicación web.</p>
+<p>La estructura de una aplicación Shiny consta de dos objetos: <code>ui</code> (user interface) y <code>server</code>. En <code>ui</code> se encuentra la estructura de la aplicación, la forma, lo que el usuario ve y puede interactuar con el navegaror. Cada elemento en <code>ui</code> posee un <code>id</code> o identificador que permite comunicarse con la parte del <code>server</code>, el cual contiene las instrucciones necesarias para obtener los resultados que se quieren mostrar en la aplicación.</p>
+<p>Para construir esta aplicación se requieren solo de dos elementos en <code>ui</code>: una entrada o input de archivo para subir una imagen y una salida o output para mostrar los resultados.</p>
+<div id="ui" class="section level4">
+<h4>UI</h4>
+<p>Sin considerar la forma de la página (fluidpage, dashboard, etc) los dos elementos en <code>ui</code> son los siguientes:</p>
+<div id="input" class="section level5">
+<h5>Input</h5>
+<pre class="r"><code>fileInput(inputId = &quot;imagen&quot;, 
+          accept = c(&quot;jpg&quot;, &quot;jpeg&quot;)) </code></pre>
+</div>
+<div id="output" class="section level5">
+<h5>Output</h5>
+<p>Para mostrar los resultados de manera simple:</p>
+<pre class="r"><code>verbatimTextOutput(&quot;resultados&quot;)</code></pre>
+<p><em>(Preferible mostrar una gráfica o tabla con los resultados. Ej: <code>tableOutput()</code>)</em></p>
+</div>
+</div>
+</div>
+<div id="keras" class="section level3">
+<h3>Keras</h3>
+<p>Keras es una polular API de redes neuronales escrita en Python (<a href="https://keras.io" class="uri">https://keras.io</a>), fue desarrollada con el objetivo de prototipar modelos fácilmente. Desde R se puede utilizar Keras por medio de una interface <a href="https://keras.rstudio.com/" class="uri">https://keras.rstudio.com/</a>.</p>
+<p>Para este ejemplo se utilizará un modelo pre-entrenado, es decir, una red neuronal con sus pesos ya ajustados. El modelo a usar se llama <strong>Inception-v3</strong>, que consiste en una red neuronal convolucional de 48 capas de profundidad entrenada con más de un millón de imágenes provenientes de la base de datos <a href="http://www.image-net.org/"><strong>ImageNet</strong></a>.</p>
+<p>Cargamos el modelo de la siguiente manera:</p>
+<pre class="r"><code>model &lt;- application_inception_v3(weights = &quot;imagenet&quot;)</code></pre>
+<div id="server" class="section level4">
+<h4>SERVER</h4>
+<p>Como ya se mencionó, en el <code>server</code> van las instrucciones necesarias para obtener los resultados, en este caso, se debe tomar la imagen desde el input para luego procesarla y realizar la predicción del modelo:</p>
+<pre class="r"><code>output$resultado &lt;- renderPrint({
+        img &lt;- image_load(input$imagen$datapath, # la ubicación
+                          target_size = c(299,299)) # dimensión
+        x &lt;- image_to_array(img)
+        x &lt;- array_reshape(x, c(1, dim(x)))
+        x &lt;- inception_v3_preprocess_input(x)
+        imagenet_decode_predictions(preds, top = 5)[[1]]</code></pre>
+<p>De esta manera se imprimen los primeros 5 objetos con los puntajes más altos.</p>
+<ul>
+<li>Estos códigos estan implementados en una Shiny App: <a href="https://psaid.shinyapps.io/reconocimientoimagen/" class="uri">https://psaid.shinyapps.io/reconocimientoimagen/</a>.<br />
+</li>
+<li>El código completo de la aplicación está disponible en mi github: <a href="https://github.com/patosaid/reconocimiento_imagen" class="uri">https://github.com/patosaid/reconocimiento_imagen</a>.</li>
+</ul>
+<p>En esta app, los resultados se muestran en una tabla mediante el paquete <code>kableExtra</code>, además los nombres de los objetos estan traducidos al español con una API de <a href="https://translate.yandex.com/">Yandex Translate</a>.</p>
+<p>Cualquier comentario/consulta escríbeme a <a href="mailto:psaidp2@gmail.com" class="email">psaidp2@gmail.com</a>.</p>
+</div>
+</div>

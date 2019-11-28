@@ -1,13 +1,90 @@
 ---
-title: Keras en Shiny app
+title: Reconocimiento de imágenes en una aplicación web (Shiny y Keras)
 author: ''
 date: '2019-11-24'
 slug: keras-en-shiny-app
 categories: ["blog"]
-tags: ["keras","shiny","machine learning", "reconocimiento de imágenes"]
+tags: ["keras","shiny","machine learning", "reconocimiento de imágenes","imaginet"]
 type: ''
 subtitle: ''
 image: ''
 ---
 
-hola que pasa
+En este post explico a grandes rasgos cómo crear una app que implementa un modelo de machine learning para el reconocimiento de imágenes. Básicamente con dos herramientas es posible crear este tipo de aplicaciones en R: por medio de [**Shiny**](https://shiny.rstudio.com/) junto a cualquier framework que permita importar un modelo de machine learning entrenado, en este caso [**Keras**](https://keras.rstudio.com/).  
+
+
+### Shiny  
+
+El paquete `shiny` permite construir sitios web interactivos (apps) de manera facil. Shiny transforma tu código R en HTML, CSS y Javascript, que son básicos para el funcionamiento de una aplicación web.  
+
+La estructura de una aplicación Shiny consta de dos objetos: `ui` (user interface) y `server`. En `ui` se encuentra la estructura de la aplicación, la forma, lo que el usuario ve y puede interactuar con el navegaror. Cada elemento en `ui` posee un `id` o identificador que permite comunicarse con la parte del `server`, el cual contiene las instrucciones necesarias para obtener los resultados que se quieren mostrar en la aplicación.  
+
+Para construir esta aplicación se requieren solo de dos elementos en `ui`: una entrada o input de archivo para subir una imagen y una salida o output para mostrar los resultados.
+
+#### UI  
+Sin considerar la forma de la página (fluidpage, dashboard, etc) los dos elementos en `ui` son los siguientes:  
+
+##### Input  
+
+```{r eval = F}
+fileInput(inputId = "imagen", 
+          accept = c("jpg", "jpeg")) 
+```
+
+##### Output  
+
+Para mostrar los resultados de manera simple:  
+
+```{r eval = F}
+verbatimTextOutput("resultados")
+```
+
+*(Preferible mostrar una gráfica o tabla con los resultados. Ej: `tableOutput()`)*
+
+### Keras  
+
+Keras es una polular API de redes neuronales escrita en Python (<https://keras.io>), fue desarrollada con el objetivo de prototipar modelos fácilmente. Desde R se puede utilizar Keras por medio de una interface <https://keras.rstudio.com/>.  
+
+Para este ejemplo se utilizará un modelo pre-entrenado, es decir, una red neuronal con sus pesos ya ajustados. El modelo a usar se llama **Inception-v3**, que consiste en una red neuronal convolucional de 48 capas de profundidad entrenada con más de un millón de imágenes provenientes de la base de datos [**ImageNet**](http://www.image-net.org/).  
+
+Cargamos el modelo de la siguiente manera: 
+
+```{r eval = F}
+model <- application_inception_v3(weights = "imagenet")
+```
+  
+#### SERVER  
+
+Como ya se mencionó, en el `server` van las instrucciones necesarias para obtener los resultados, en este caso, se debe tomar la imagen desde el input para luego procesarla y realizar la predicción del modelo:  
+
+```{r eval = F}
+output$resultado <- renderPrint({
+        img <- image_load(input$imagen$datapath, # la ubicación
+                          target_size = c(299,299)) # dimensión
+        x <- image_to_array(img)
+        x <- array_reshape(x, c(1, dim(x)))
+        x <- inception_v3_preprocess_input(x)
+        imagenet_decode_predictions(preds, top = 5)[[1]]
+        
+```
+
+De esta manera se imprimen los primeros 5 objetos con los puntajes más altos.  
+
+* Estos códigos estan implementados en una Shiny App: <https://psaid.shinyapps.io/reconocimientoimagen/>.  
+* El código completo de la aplicación está disponible en mi github: <https://github.com/patosaid/reconocimiento_imagen>.  
+
+En esta app, los resultados se muestran en una tabla mediante el paquete `kableExtra`, además los nombres de los objetos estan traducidos al español con una API de [Yandex Translate](https://translate.yandex.com/).  
+
+Cualquier comentario/consulta escríbeme a psaidp2@gmail.com.  
+
+
+
+
+
+
+
+
+
+
+
+
