@@ -49,7 +49,8 @@ image: ''
         x &lt;- image_to_array(img)
         x &lt;- array_reshape(x, c(1, dim(x)))
         x &lt;- inception_v3_preprocess_input(x)
-        imagenet_decode_predictions(preds, top = 5)[[1]]</code></pre>
+        imagenet_decode_predictions(preds, top = 5)[[1]]
+})</code></pre>
 <p>De esta manera se imprimen los primeros 5 objetos con los puntajes más altos.</p>
 <ul>
 <li>Estos códigos estan implementados en una Shiny App: <a href="https://psaid.shinyapps.io/reconocimientoimagen/" class="uri">https://psaid.shinyapps.io/reconocimientoimagen/</a>.<br />

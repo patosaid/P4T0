@@ -65,6 +65,7 @@ output$resultado <- renderPrint({
         x <- array_reshape(x, c(1, dim(x)))
         x <- inception_v3_preprocess_input(x)
         imagenet_decode_predictions(preds, top = 5)[[1]]
+})
         
 ```
 
