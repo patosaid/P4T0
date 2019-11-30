@@ -49,6 +49,7 @@ image: ''
         x &lt;- image_to_array(img)
         x &lt;- array_reshape(x, c(1, dim(x)))
         x &lt;- inception_v3_preprocess_input(x)
+        preds &lt;- model %&gt;% predict(x)
         imagenet_decode_predictions(preds, top = 5)[[1]]
 })</code></pre>
 <p>De esta manera se imprimen los primeros 5 objetos con los puntajes más altos.</p>
