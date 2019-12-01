@@ -65,7 +65,7 @@ ShinyEl paquete shiny permite construir sitios web interactivos (apps) de maner
   "headline": "Reconocimiento de imágenes en una aplicación web (Shiny y Keras)",
   "description" : "En este post explico a grandes rasgos cómo crear una app que implementa un modelo de machine learning para el reconocimiento de imágenes. Básicamente con dos herramientas es posible crear este tipo de aplicaciones en R: por medio de Shiny junto a cualquier framework que permita importar un modelo de machine learning entrenado, en este caso Keras.\nShiny\rEl paquete shiny permite construir sitios web interactivos (apps) de manera facil.",
   "inLanguage" : "en",
-  "wordCount":  478 ,
+  "wordCount":  496 ,
   "datePublished" : "2019-11-24T00:00:00",
   "dateModified" : "2019-11-24T00:00:00",
   "image" : "\/img\/pink.png",
@@ -258,7 +258,7 @@ ShinyEl paquete shiny permite construir sitios web interactivos (apps) de maner
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;478&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;496&nbsp;words
   
   
     
@@ -316,8 +316,8 @@ ShinyEl paquete shiny permite construir sitios web interactivos (apps) de maner
 <pre class="r"><code>model &lt;- application_inception_v3(weights = &quot;imagenet&quot;)</code></pre>
 <div id="server" class="section level4">
 <h4>SERVER</h4>
-<p>Como ya se mencionó, en el <code>server</code> van las instrucciones necesarias para obtener los resultados, en este caso, se debe tomar la imagen desde el input para luego procesarla y realizar la predicción del modelo:</p>
-<pre class="r"><code>output$resultado &lt;- renderPrint({
+<p>Como ya se mencionó, en el <code>server</code> van las instrucciones necesarias para obtener los resultados, en este caso, se debe tomar la imagen desde el input (<code>fileInput()</code>) para luego procesarla y realizar la predicción del modelo (<code>renderPrint()</code> porque en el <code>ui</code> la salida quedó definida con <code>verbatimTextOutput()</code> con id = <code>resultados</code> ):</p>
+<pre class="r"><code>output$resultados &lt;- renderPrint({
         img &lt;- image_load(input$imagen$datapath, # la ubicación
                           target_size = c(299,299)) # dimensión
         x &lt;- image_to_array(img)
@@ -327,6 +327,10 @@ ShinyEl paquete shiny permite construir sitios web interactivos (apps) de maner
         imagenet_decode_predictions(preds, top = 5)[[1]]
 })</code></pre>
 <p>De esta manera se imprimen los primeros 5 objetos con los puntajes más altos.</p>
+</div>
+</div>
+<div id="implementación" class="section level3">
+<h3>Implementación</h3>
 <ul>
 <li>Estos códigos estan implementados en una Shiny App: <a href="https://psaid.shinyapps.io/reconocimientoimagen/" class="uri">https://psaid.shinyapps.io/reconocimientoimagen/</a>.<br />
 </li>
@@ -334,7 +338,6 @@ ShinyEl paquete shiny permite construir sitios web interactivos (apps) de maner
 </ul>
 <p>En esta app, los resultados se muestran en una tabla mediante el paquete <code>kableExtra</code>, además los nombres de los objetos estan traducidos al español con una API de <a href="https://translate.yandex.com/">Yandex Translate</a>.</p>
 <p>Cualquier comentario/consulta escríbeme a <a href="mailto:psaidp2@gmail.com" class="email">psaidp2@gmail.com</a>.</p>
-</div>
 </div>
 
 

@@ -55,10 +55,10 @@ model <- application_inception_v3(weights = "imagenet")
   
 #### SERVER  
 
-Como ya se mencionó, en el `server` van las instrucciones necesarias para obtener los resultados, en este caso, se debe tomar la imagen desde el input para luego procesarla y realizar la predicción del modelo:  
+Como ya se mencionó, en el `server` van las instrucciones necesarias para obtener los resultados, en este caso, se debe tomar la imagen desde el input (`fileInput()`) para luego procesarla y realizar la predicción del modelo (`renderPrint()` porque en el `ui` la salida quedó definida con `verbatimTextOutput()` con id = `resultados` ):  
 
 ```{r eval = F}
-output$resultado <- renderPrint({
+output$resultados <- renderPrint({
         img <- image_load(input$imagen$datapath, # la ubicación
                           target_size = c(299,299)) # dimensión
         x <- image_to_array(img)
@@ -71,6 +71,8 @@ output$resultado <- renderPrint({
 ```
 
 De esta manera se imprimen los primeros 5 objetos con los puntajes más altos.  
+
+### Implementación  
 
 * Estos códigos estan implementados en una Shiny App: <https://psaid.shinyapps.io/reconocimientoimagen/>.  
 * El código completo de la aplicación está disponible en mi github: <https://github.com/patosaid/reconocimiento_imagen>.  
